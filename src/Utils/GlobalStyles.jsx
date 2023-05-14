@@ -79,4 +79,35 @@ export const GlobalStyles = createGlobalStyle`
     color: ${(props) => props.theme.colors.background}
   }
 
+  footer{
+    margin: 2rem 0 0 0;
+    background-color: ${(props) => props.theme.colors.text};
+    height: 300px;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    column-gap: 10px;
+
+    h2{
+      font-family: 'Lora', serif;
+    }
+  }
+
+  .footer-company{
+    width: 30%;
+  }
+
+  .footer-company-name{
+    margin: 0 0 0.6rem 0;
+  }
+
+  .footer-company-details{
+    width: 35%;
+    text-align: center;
+  }
+
+  .footer-company-details-text{
+    margin: 0.6rem 0;
+  }
+
 `;
