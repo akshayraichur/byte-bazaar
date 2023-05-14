@@ -24,6 +24,7 @@ export const StyledNavbar = styled.nav`
     align-items: center;
     cursor: pointer;
     color: white;
+    text-decoration: none;
 
     img {
       height: 40px;

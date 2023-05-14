@@ -7,12 +7,17 @@ import { NavLink } from "react-router-dom";
 
 const StyledHome = styled.div`
   transition: all 0.3s ease;
+  text-decoration: none;
 
   .card {
     border: 2px solid ${(props) => props.theme.colors.border};
     padding: 8px;
     border-radius: 8px;
     margin: 1rem 0 0 0;
+  }
+
+  .navlink {
+    text-decoration: none;
   }
 `;
 
@@ -26,7 +31,7 @@ const Home = () => {
         <Grid container spacing={1}>
           {CATEGORY.map((category) => (
             <Grid item xs={12} sm={6} md={4} lg={2} key={category.id}>
-              <NavLink to={`/products?category=${category.title.toLowerCase()}`}>
+              <NavLink to={`/products?c=${category.title.toLowerCase()}`} className="navlink">
                 <Card
                   variant="category"
                   height="h-300"
