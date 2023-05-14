@@ -1,11 +1,10 @@
 import { createGlobalStyle, css } from "styled-components";
 
-import californiaParadise from "../assets/fonts/california-paradise.ttf";
-
 const deepColor = "#4f46e5";
-const borderColor = "#818cf8";
+const borderColor = "#a5b4fc";
 const orange = "#f97316";
 const green = "#22c55e";
+const containerColor = "#e0e7ff";
 
 export const Theme = {
   colors: {
@@ -14,6 +13,8 @@ export const Theme = {
     border: borderColor,
     btnBgColor: deepColor,
     containerBg: deepColor,
+    borderHoverColor: deepColor,
+    containerColor,
     green,
     orange,
   },
@@ -55,25 +56,20 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
-  @font-face {
-    font-family: 'california';
-    src: url(${californiaParadise}) format('truetype');
-  }
-
   body {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif, 'Lora', serif;
     color: ${(props) => props.theme.colors.text};
     background-color: ${(props) => props.theme.colors.background};
   }
 
   h1 {
-    font-family: "california", "Inter", sans-serif;
-    letter-spacing: 10px;
+    font-family: 'Lora', serif;
+    letter-spacing: 5px;
     font-size: 2.5rem;
     text-transform: uppercase;
     margin: 0.4rem 0;
 
-    @media screen and (width <= 599px) {
+    @media screen and (width < 599px) {
       font-size: 1.6rem;
     }
   }

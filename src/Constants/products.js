@@ -1,0 +1,91 @@
+const MOBILE_PRODUCTS = [
+  {
+    id: Math.random().toString(),
+    title: "Apple iPhone 14 Pro Max",
+    desc: "The best in class smartphone from Apple",
+    category: "mobiles",
+    price: "1,27,999",
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/6/x/j/-original-imaghxejqvpwfqh2.jpeg?q=70",
+    tag: "best-seller",
+  },
+  {
+    id: Math.random().toString(),
+    title: "Apple iPhone 14 Pro",
+    desc: "The best in class smartphone from Apple",
+    category: "mobiles",
+    price: "1,17,999",
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/h/r/e/-original-imaghxeeme2n7hy7.jpeg?q=70",
+  },
+  {
+    id: Math.random().toString(),
+    title: "Apple iPhone 14 Plus",
+    desc: "The best in class smartphone from Apple",
+    category: "mobiles",
+    price: "95,999",
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/c/4/d/-original-imaghx9qygjjg8hz.jpeg?q=70",
+  },
+  {
+    id: Math.random().toString(),
+    title: "Apple iPhone 14",
+    desc: "The best in class smartphone from Apple",
+    category: "mobiles",
+    price: "79,999",
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/r/k/o/-original-imaghx9qtwbnhwvy.jpeg?q=70",
+  },
+  {
+    id: Math.random().toString(),
+    title: "Samsung Galaxy S23 Ultra",
+    desc: "The Samsung's best yet..",
+    category: "mobiles",
+    price: "1,27,999",
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/2/s/7/-original-imagmg6gktts6sfy.jpeg?q=70",
+    tag: "best-seller",
+  },
+];
+
+const LAPTOP_PRODUCTS = [
+  {
+    id: Math.random().toString(),
+    title: "Apple MacBook Pro 16inch M1 Pro",
+    desc: "The best in class laptop from Apple",
+    category: "laptops",
+    price: "2,19,894",
+    img: "https://rukminim1.flixcart.com/image/416/416/kuyf8nk0/computer/z/k/q/mkgr3hn-a-thin-and-light-laptop-apple-original-imag7yzp78bpnzyg.jpeg?q=70",
+    tag: "best-seller",
+  },
+  {
+    id: Math.random().toString(),
+    title: "Apple MacBook Pro 14inch M1 Max",
+    desc: "The best in class laptop from Apple",
+    category: "laptops",
+    price: "2,19,894",
+    img: "https://rukminim1.flixcart.com/image/416/416/kuyf8nk0/computer/3/n/s/mk183hn-a-laptop-apple-original-imag7yzkbgbwvwq3.jpeg?q=70",
+    tag: "best-seller",
+  },
+  {
+    id: Math.random().toString(),
+    title: "Dell XPS 13 core i5 10th Gen",
+    desc: "Dell's pride",
+    category: "laptops",
+    price: "1,04,100",
+    img: "https://rukminim1.flixcart.com/image/416/416/kf2v3ww0/computer/h/t/m/dell-original-imafvm5ymhkzvdqu.jpeg?q=70",
+  },
+  {
+    id: Math.random().toString(),
+    title: "Dell Inspiron Core i5 11th Gen",
+    desc: "Dell's pride",
+    category: "laptops",
+    price: "53,490",
+    img: "https://rukminim1.flixcart.com/image/416/416/kf2v3ww0/computer/h/t/m/dell-original-imafvm5ymhkzvdqu.jpeg?q=70",
+  },
+  {
+    id: Math.random().toString(),
+    title: "Dell Inspiron Core i3 11th Gen",
+    desc: "Dell's pride",
+    category: "laptops",
+    price: "43,490",
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/n/o/s/-original-imaghzah9mjvukjz.jpeg?q=70",
+  },
+];
+
+export const PRODUCTS = [...MOBILE_PRODUCTS, ...LAPTOP_PRODUCTS];
