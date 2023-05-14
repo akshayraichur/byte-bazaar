@@ -22,6 +22,44 @@ const StyledNavbar = styled.nav`
     justify-content: space-between;
   }
 
+  .search-container {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+
+    @media screen and (width <= 799px) {
+      display: none;
+    }
+  }
+
+  .search-input {
+    padding: 0.5rem 1rem;
+    border-radius: ${(props) => props.theme.borderRadius.card};
+    border: none;
+    font-family: "Inter", sans-serif;
+    width: 80%;
+    font-size: 0.9rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .search-input.sm {
+    width: 100%;
+  }
+
+  .sm-search-container {
+    display: none;
+    justify-content: center;
+    width: 100%;
+    margin: 0.5rem 0;
+
+    @media screen and (width <= 799px) {
+      display: flex;
+    }
+  }
+
   .icon-container {
     display: flex;
     column-gap: 1.2rem;
@@ -49,8 +87,8 @@ const Navbar = () => {
         <div>
           <h1 className="nav-title">Byte Bazaar</h1>
         </div>
-        <div>
-          <input type="text" />
+        <div className="search-container">
+          <input type="text" placeholder="Search product.." className="search-input" />
         </div>
         <div className="icon-container">
           <button className="icon">
@@ -62,6 +100,10 @@ const Navbar = () => {
           <button className="icon">
             <ProfileIcon />
           </button>
+        </div>
+
+        <div className="sm-search-container">
+          <input type="text" placeholder="Search product.." className="search-input sm" />
         </div>
       </Container>
     </StyledNavbar>

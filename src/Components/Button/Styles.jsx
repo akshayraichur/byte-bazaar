@@ -3,7 +3,7 @@ import { ButtonTransitionStyles } from "../../Utils/GlobalStyles";
 
 export const StyledButton = styled.button`
   padding: 0.8rem 1.4rem;
-  margin: 1rem 0.5rem 1rem 0;
+  margin: 1rem 0;
   cursor: pointer;
   color: white;
   font-size: 0.85rem;
@@ -13,6 +13,14 @@ export const StyledButton = styled.button`
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
   ${ButtonTransitionStyles}
+
+  /* media queries */
+  @media screen and (width <= 599px) {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  /* Styling according to props */
 
   ${(props) =>
     props.variant === "filled" &&
