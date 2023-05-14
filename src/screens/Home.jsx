@@ -4,6 +4,7 @@ import Card from "../Components/Card/Card";
 import { CATEGORY } from "../Constants/category";
 import { NavLink } from "react-router-dom";
 import { PRODUCTS } from "../Constants/products";
+import Footer from "../Components/Footer";
 
 const StyledHome = styled.div`
   transition: all 0.3s ease;
@@ -150,26 +151,7 @@ const Home = () => {
           </Grid>
         </StyledHome>
       </Container>
-      <footer className="footer">
-        <div className="footer-company">
-          <h2 className="footer-company-name">Byte Bazaar</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque provident nobis asperiores hic repellat
-            ab, laboriosam fugit est dolorum debitis nisi.
-          </p>
-          <p>Belagavi, Karnataka, India.</p>
-        </div>
-        <div className="footer-company-details">
-          <h2 className="footer-company-name">Company</h2>
-          <p className="footer-company-details-text">About us</p>
-          <p className="footer-company-details-text">Careers</p>
-        </div>
-        <div className="footer-company-details">
-          <h2 className="footer-company-name">Social</h2>
-          <p className="footer-company-details-text">Linkedin</p>
-          <p className="footer-company-details-text">Instagram</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };

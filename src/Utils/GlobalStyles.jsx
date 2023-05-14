@@ -106,8 +106,14 @@ export const GlobalStyles = createGlobalStyle`
     text-align: center;
   }
 
+  .footer-company-details div{
+    margin: 1rem 0;
+  }
+
   .footer-company-details-text{
-    margin: 0.6rem 0;
+    margin: 1rem 0;
+    color: white;
+    text-decoration: none;
   }
 
 `;
