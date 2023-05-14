@@ -2,11 +2,11 @@ import styled, { css } from "styled-components";
 import { ButtonTransitionStyles } from "../../Utils/GlobalStyles";
 
 export const StyledButton = styled.button`
-  padding: 0.8rem 1.4rem;
+  padding: 0.8rem 2.5rem;
   margin: 1rem 0;
   cursor: pointer;
   color: white;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-family: "Inter";
 
   border-radius: ${(props) => props.theme.borderRadius.btn};
@@ -18,6 +18,7 @@ export const StyledButton = styled.button`
   @media screen and (width <= 599px) {
     width: 100%;
     margin: 0.5rem 0;
+    padding: 0.6rem 1rem;
   }
 
   /* Styling according to props */

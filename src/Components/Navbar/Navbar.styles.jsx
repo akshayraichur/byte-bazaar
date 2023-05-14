@@ -1,11 +1,7 @@
-import { Container } from "@mui/material";
 import styled from "styled-components";
-import ShoppingCartIcon from "../assets/Icons/ShoppingCartIcon";
-import { ButtonTransitionStyles } from "../Utils/GlobalStyles";
-import WishListIcon from "../assets/Icons/WishListIcon";
-import ProfileIcon from "../assets/Icons/ProfileIcon";
+import { ButtonTransitionStyles } from "../../Utils/GlobalStyles";
 
-const StyledNavbar = styled.nav`
+export const StyledNavbar = styled.nav`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.containerBg};
   padding: 0.8rem 0;
@@ -13,6 +9,7 @@ const StyledNavbar = styled.nav`
   .nav-title {
     font-size: 1.4rem;
     letter-spacing: 2px;
+    text-transform: capitalize;
   }
 
   .nav-container {
@@ -20,6 +17,21 @@ const StyledNavbar = styled.nav`
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+
+    img {
+      height: 40px;
+    }
+
+    h1 {
+      margin: 0.3rem 0 0 0;
+    }
   }
 
   .search-container {
@@ -79,35 +91,3 @@ const StyledNavbar = styled.nav`
     height: 22px;
   }
 `;
-
-const Navbar = () => {
-  return (
-    <StyledNavbar>
-      <Container maxWidth="xl" className="nav-container">
-        <div>
-          <h1 className="nav-title">Byte Bazaar</h1>
-        </div>
-        <div className="search-container">
-          <input type="text" placeholder="Search product.." className="search-input" />
-        </div>
-        <div className="icon-container">
-          <button className="icon">
-            <WishListIcon />
-          </button>
-          <button className="icon">
-            <ShoppingCartIcon />
-          </button>
-          <button className="icon">
-            <ProfileIcon />
-          </button>
-        </div>
-
-        <div className="sm-search-container">
-          <input type="text" placeholder="Search product.." className="search-input sm" />
-        </div>
-      </Container>
-    </StyledNavbar>
-  );
-};
-
-export default Navbar;

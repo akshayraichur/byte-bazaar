@@ -30,6 +30,22 @@ export const ButtonTransitionStyles = css`
   }
 `;
 
+export const FadeInAnimation = css`
+  animation: fadein 0.5s ease;
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+      transform: translateY(20%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+`;
+
 export const GlobalStyles = createGlobalStyle`
   *,
   *::after,
@@ -52,7 +68,14 @@ export const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-family: "california", "Inter", sans-serif;
+    letter-spacing: 10px;
     font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 0.4rem 0;
+
+    @media screen and (width <= 599px) {
+      font-size: 1.6rem;
+    }
   }
 
   ::selection{

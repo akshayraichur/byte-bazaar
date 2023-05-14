@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import { StyledButton } from "./Styles";
+import { StyledButton } from "./Button.styles";
 
 const Button = (props) => {
   const { variant, children, color } = props;
   return (
-    <StyledButton variant={variant} color={color}>
+    <StyledButton variant={variant} color={color} {...props}>
       {children}
     </StyledButton>
   );
