@@ -116,7 +116,7 @@ const Home = () => {
 
           <Grid container spacing={1}>
             {CATEGORY.map((category) => (
-              <Grid item xs={12} sm={6} md={4} lg={2} key={category.id}>
+              <Grid item xs={6} sm={6} md={4} lg={2} key={category.id}>
                 <NavLink to={`/products?c=${category.title.toLowerCase()}`} className="navlink">
                   <Card
                     variant="category"
@@ -144,7 +144,7 @@ const Home = () => {
                   img={product.img}
                   subtitle={product.subtitle}
                   price={product.price}
-                  hrefLink={`/details/`}
+                  hrefLink={`/products/${product.id}`}
                 />
               </Grid>
             ))}

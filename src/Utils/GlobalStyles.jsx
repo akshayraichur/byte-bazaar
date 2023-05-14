@@ -79,6 +79,15 @@ export const GlobalStyles = createGlobalStyle`
     color: ${(props) => props.theme.colors.background}
   }
 
+  .w-100{
+    width: 100%;
+  }
+
+  .navlink {
+    text-decoration: none;
+    color: inherit;
+  }
+
   footer{
     margin: 2rem 0 0 0;
     background-color: ${(props) => props.theme.colors.text};

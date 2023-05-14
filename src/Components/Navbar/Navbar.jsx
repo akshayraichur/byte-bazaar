@@ -19,7 +19,7 @@ const Navbar = () => {
           <h1 className="nav-title">Bytes</h1>
         </NavLink>
         <div className="search-container">
-          <input type="text" placeholder="Search product.." className="search-input" />
+          <input type="text" placeholder="Search product by name..." className="search-input" />
         </div>
         <div className="icon-container">
           <NavLink to="/wishlist" className="icon">

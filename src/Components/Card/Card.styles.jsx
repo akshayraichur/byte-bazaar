@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { FadeInAnimation } from "../../Utils/GlobalStyles";
 
-const cardImageStyles = css`
+export const cardImageStyles = css`
   height: 100%;
   width: 100%;
   object-fit: contain;
@@ -10,6 +10,11 @@ const cardImageStyles = css`
   &:hover {
     transform: scale(1.05);
   }
+`;
+
+export const cardImageContainer = css`
+  height: 200px;
+  width: 100%;
 `;
 
 export const StyledCard = styled.div`
@@ -26,8 +31,7 @@ export const StyledCard = styled.div`
   }
 
   .img-container {
-    height: 200px;
-    width: 100%;
+    ${cardImageContainer}
   }
 
   .img {
