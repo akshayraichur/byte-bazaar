@@ -4,6 +4,7 @@ import Card from "../Components/Card/Card";
 import { CATEGORY } from "../Constants/category";
 import { NavLink } from "react-router-dom";
 import { PRODUCTS } from "../Constants/products";
+import Button from "../Components/Button/Button";
 
 const StyledHome = styled.div`
   transition: all 0.3s ease;
@@ -99,6 +100,9 @@ const Home = () => {
                 From state-of-the-art smartphones and powerful laptops to innovative smart home devices and
                 high-performance gaming gear, {"we've"} got it all.
               </p>
+              <NavLink to="/products">
+                <Button variant="filled">Browse all products</Button>
+              </NavLink>
             </div>
 
             <div className="image-container">

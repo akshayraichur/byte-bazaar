@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Alert, Container, Grid, Snackbar } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import styled from "styled-components";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -12,9 +12,10 @@ import { getAPI } from "../Utils/ApiCalls";
 import { GET_CATEGORIES, GET_PRODUCTS } from "../Constants/URLs";
 import { useSearchParams } from "react-router-dom";
 import Shimmer from "../Components/Shimmer";
-import { PRODUCTS } from "../Constants/products";
+// import { PRODUCTS } from "../Constants/products";
 import Button from "../Components/Button/Button";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import { FILTER_NAMES } from "../Constants/ProductListing";
 
 const ProductListingStyles = styled.div`
   margin: 1rem 0 0 0;
@@ -86,26 +87,33 @@ const ProductListingStyles = styled.div`
 `;
 
 const ProductListing = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false);
-  // eslint-disable-next-line no-unused-vars
-  const [filters, setFitlers] = useState({ c: searchParams.get("c") });
+  const [filters, setFitlers] = useState({ c: [], price: false, rating: 0 });
   const [expandAccordion, setExpandAccordion] = useState(true);
 
   const fetchProducts = async () => {
     setLoading(true);
     try {
       let result = await getAPI(GET_PRODUCTS);
+
       if (Array.isArray(result)) {
-        let filteredProducts = result;
-        if (filters.c) {
-          filteredProducts = result.filter((product) => product.category === filters.c);
+        let filteredProducts = [];
+
+        if (searchParams.get("c")?.trim()) {
+          let filters = searchParams.get("c")?.split(",");
+
+          filters.forEach((filter) => {
+            filteredProducts.push(...result.filter((product) => product.category === filter));
+          });
+
+          setProducts(filteredProducts);
+        } else {
+          setProducts(result);
         }
-        setProducts(filteredProducts);
       } else {
         toast.error("There was some problem loading the products data.");
       }
@@ -133,17 +141,37 @@ const ProductListing = () => {
   };
 
   useEffect(() => {
-    fetchProducts();
+    if (searchParams.get("c")) {
+      setFitlers((p) => ({ ...p, c: searchParams.get("c").split(",") ?? [] }));
+    }
     fetchCategories();
   }, []);
 
-  // Will keep a track of any filters set from url params and keeps a track of it.
-  useEffect(() => {}, [searchParams]);
+  useEffect(() => {
+    fetchProducts();
+  }, [filters.c]);
 
-  // Will get updated whenever there is any change in the filters.
-  useEffect(() => {}, [products]);
+  const updateFilter = (e, type) => {
+    if (type === FILTER_NAMES.CATEGORY) {
+      let filteredArray = [...filters.c];
+      if (e.target.name && e.target.checked) {
+        filteredArray.push(e.target.name);
+      }
+      if (!e.target.checked && filteredArray.includes(e.target.name)) {
+        let index = filteredArray.indexOf(e.target.name);
+        console.log(index);
+        filteredArray.splice(index, 1);
+        console.log(filteredArray);
+      }
+      setFitlers((p) => ({ ...p, c: filteredArray }));
+      setSearchParams({ c: filteredArray.length ? filteredArray.join(",") : "" });
+    }
+  };
 
-  const updateFilter = (e, type) => {};
+  const clearFilters = () => {
+    setFitlers({ c: "", price: false, rating: 0 });
+    setSearchParams({});
+  };
 
   return (
     <>
@@ -172,8 +200,10 @@ const ProductListing = () => {
                         <div key={item.id} className="category-list">
                           <input
                             type="checkbox"
+                            name={item.title.toLowerCase()}
                             id={`${item.title}-checkbox`}
-                            onChange={(e) => updateFilter(e, "category-checkbox")}
+                            defaultChecked={filters.c?.includes(item.title.toLowerCase())}
+                            onChange={(e) => updateFilter(e, FILTER_NAMES.CATEGORY)}
                           />
                           <label htmlFor={`${item.title}-checkbox`}>{item.title}</label>
                         </div>
@@ -230,7 +260,7 @@ const ProductListing = () => {
                     </div>
                   </div>
 
-                  <Button variant="outlined" color="green">
+                  <Button variant="outlined" color="green" onClick={clearFilters}>
                     Clear
                   </Button>
                 </AccordionDetails>
@@ -239,7 +269,7 @@ const ProductListing = () => {
             </Grid>
 
             <Grid item xs={12} sm={9} md={9.5}>
-              <h1>Product Details 🔍</h1>
+              <h1>Product Listing 🔍</h1>
               {loading
                 ? [1, 2, 3, 4, 5].map((item) => <Shimmer key={item} variant="product-listing" />)
                 : /* TODO: Change this to products */

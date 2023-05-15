@@ -1,0 +1,5 @@
+export const FILTER_NAMES = {
+  CATEGORY: "CATEGORY",
+  PRICE: "PRICE",
+  RATING: "RATING",
+};
