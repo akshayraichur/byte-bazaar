@@ -3,7 +3,6 @@ import { ListingCardStyles } from "./ProductListingCard.styles";
 import PropTypes from "prop-types";
 
 const ProductListingCard = ({ title, img, details, id, price }) => {
-  console.log(details);
   return (
     <ListingCardStyles>
       <div className="img-container">

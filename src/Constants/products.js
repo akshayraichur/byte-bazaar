@@ -15,6 +15,10 @@ const MOBILE_PRODUCTS = [
       "128GB ROM",
       "1 year warranty for phone & 6 months for in-box accessories",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "1f61ee9c-048c-4d2a-a0d4-096c755f824b",
@@ -32,6 +36,10 @@ const MOBILE_PRODUCTS = [
       "128GB ROM",
       "1 year warranty for phone & 6 months for in-box accessories",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "7c160374-f72f-43f8-b0e2-0d679163c525",
@@ -49,6 +57,10 @@ const MOBILE_PRODUCTS = [
       "128GB ROM",
       "1 year warranty for phone & 6 months for in-box accessories",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "6fe0cde5-82a8-4efc-8ca2-f10b5ef8f07a",
@@ -66,6 +78,10 @@ const MOBILE_PRODUCTS = [
       "128GB ROM",
       "1 year warranty for phone & 6 months for in-box accessories",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "8f345449-b72d-4bee-90f7-4e155ea7755f",
@@ -83,9 +99,13 @@ const MOBILE_PRODUCTS = [
       "5000 mAh Lithium Ion Battery",
       "1 year warranty for phone & 6 months for in-box accessories",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
-    id: "d299bae5-d5cf-412c-9194-f8ddbd6ca79c",
+    id: "25932b54-024c-4453-8b4b-d7018153d907",
     title: "Samsung Galaxy S23 Plus",
     desc: "The Samsung's best yet..",
     category: "mobiles",
@@ -100,6 +120,10 @@ const MOBILE_PRODUCTS = [
       "4700 mAh Lithium Ion Battery",
       "1 year warranty for phone & 6 months for in-box accessories",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "d299bae5-d5cf-412c-9194-f8ddbd6ca79c",
@@ -117,6 +141,10 @@ const MOBILE_PRODUCTS = [
       "4500 mAh Lithium Ion Battery",
       "1 year warranty for phone & 6 months for in-box accessories",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
 ];
 
@@ -136,6 +164,10 @@ const LAPTOP_PRODUCTS = [
       "16.2 inch Display",
       "1 Year Limited Warranty",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "30ecd335-1af0-414d-adfd-077da5f02035",
@@ -152,6 +184,10 @@ const LAPTOP_PRODUCTS = [
       "14 inch Display",
       "1 Year Limited Warranty",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "886a22b7-710b-460c-ab09-b9a2d36dc4fe",
@@ -169,6 +205,10 @@ const LAPTOP_PRODUCTS = [
       "1 Year Limited Warranty",
       "Microsoft Office 365",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "aef6e1e1-a919-49c5-80e4-dad964f422ae",
@@ -186,6 +226,10 @@ const LAPTOP_PRODUCTS = [
       "1 Year Limited Warranty",
       "Microsoft Office 365",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "a085d724-eade-46d3-8d3e-10d8132a7e95",
@@ -203,6 +247,10 @@ const LAPTOP_PRODUCTS = [
       "1 Year Limited Warranty",
       "Microsoft Office 365",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "6a30d42f-c31a-447a-bf48-98619ae45cd1",
@@ -220,6 +268,10 @@ const LAPTOP_PRODUCTS = [
       "1 Year Limited Warranty",
       "Microsoft Office 365",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "d3ba2470-85fd-4af6-a0b0-18840540f942",
@@ -237,6 +289,10 @@ const LAPTOP_PRODUCTS = [
       "1 Year Limited Warranty",
       "Microsoft Office 365",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "b9132679-6314-4c2c-b3a0-394f572d2f84",
@@ -254,6 +310,10 @@ const LAPTOP_PRODUCTS = [
       "1 Year Limited Warranty",
       "Microsoft Office 365",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
 ];
 
@@ -266,7 +326,17 @@ const CAMERA_PRODUCTS = [
     price: "81,999",
     tag: null,
     img: "https://rukminim1.flixcart.com/image/416/416/l5jxt3k0/dslr-camera/m/n/a/-original-imagg7hsggshhwbz.jpeg?q=70",
-    details: ["Apple Bionic A16 Chipset", "48MP Main Camera", "iOS 16", "dynamic island"],
+    details: [
+      "4K/HD Format, High Performance Fast Hybrid AF",
+      "Effective Pixels: 24.3 MP",
+      "Sensor Type: CMOS",
+      "Full HD | Wifi Available",
+      "2 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "f92a8010-6c41-4463-bf28-113150360761",
@@ -283,6 +353,10 @@ const CAMERA_PRODUCTS = [
       "Sensor Type: CMOS",
       "2 Year Warranty",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "e899f7be-e396-48a8-9d73-fad7524b67ec",
@@ -299,6 +373,10 @@ const CAMERA_PRODUCTS = [
       "Sensor Type: CMOS",
       "2 Year Warranty",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "7eeec888-4497-4e19-ae9f-dad4f6344a11",
@@ -315,6 +393,51 @@ const CAMERA_PRODUCTS = [
       "Sensor Type: CMOS",
       "2 Year Warranty",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+  },
+  {
+    id: "0b57e3ac-eaee-42b2-ac1e-6f359b4237ad",
+    title: "Canon EOS 200D Mark II DSLR Camera",
+    desc: "Canon EOS 200D Mark II camera with 18 - 55 mm lens IS STM",
+    category: "cameras",
+    price: "60,490",
+    img: "https://rukminim1.flixcart.com/image/416/416/juwzf680/dslr-camera/g/a/q/200d-ii-200d-ii-canon-original-imaffvrhzyqzayys.jpeg?q=70",
+    tag: null,
+    details: [
+      "4K and vertical movies, Live Youtube Streaming, Auto Video Transcoding",
+      "24.1 MP Effective Pixels",
+      "Full HD movie at 60p, 3.5mm external microphone input",
+      "Sensor Type: CMOS",
+      "Wifi Available | Full HD",
+      "2 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+  },
+  {
+    id: "a1b97690-d5db-4c49-9cdc-7bd66a71bb07",
+    title: "Canon EOS 90D DSLR Camera",
+    desc: "Canon EOS 90D camera with 18 - 55 mm lens IS STM",
+    category: "cameras",
+    price: "1,20,490",
+    img: "https://rukminim1.flixcart.com/image/416/416/k1jlyfk0/dslr-camera/b/c/a/90d-eos-90d-canon-original-imafh3b6jvmzyesh.jpeg?q=70",
+    tag: "best-seller",
+    details: [
+      "4K (Uncropped/Cropped) and Dual pixel CMOS AF, Face Detection, 5 481 stable focus points",
+      "32.5 MP Effective Pixels",
+      "Sensor Type: CMOS",
+      "Wifi Available | Full HD",
+      "2 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
 ];
 
@@ -328,6 +451,10 @@ const TV_PRODUCTS = [
     tag: null,
     img: "https://rukminim1.flixcart.com/image/416/416/xif0q/television/m/n/p/-original-imagkzctc2gkvfgf.jpeg?q=70",
     details: ["Operating System: Tizen", "HD Ready: 1366 x 768 pixels", "1 year warranty"],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "effa30d5-1a1e-479a-a4d6-fb63fc0d4d8b",
@@ -338,6 +465,10 @@ const TV_PRODUCTS = [
     tag: null,
     img: "https://rukminim1.flixcart.com/image/416/416/kqidx8w0/television/m/1/v/32ha0a00-oneplus-original-imag4gy8yezxdhen.jpeg?q=70",
     details: ["Operating System: Android", "HD Ready: 1366 x 768 pixels", "1 year warranty"],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "de4da823-53d3-4d0b-9a5d-1093cc7041db",
@@ -348,6 +479,10 @@ const TV_PRODUCTS = [
     tag: null,
     img: "https://rukminim1.flixcart.com/image/416/416/l3nco7k0/television/w/f/9/-original-imageq5ejeymhxam.jpeg?q=70",
     details: ["Operating System: Tizen", "Ultra HD Ready: 3840 x 2160 pixels", "1 year warranty"],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "b3083e5c-5877-4836-81b2-7e711eef5533",
@@ -358,6 +493,10 @@ const TV_PRODUCTS = [
     tag: "best-seller",
     img: "https://rukminim1.flixcart.com/image/416/416/xif0q/television/u/h/n/-original-imaggwfzpgv9pbht.jpeg?q=70",
     details: ["Operating System: Tizen", "Ultra HD Ready: 3840 x 2160 pixels", "1 year warranty"],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "b8c82a75-a783-4114-ad29-86174e264b37",
@@ -368,6 +507,24 @@ const TV_PRODUCTS = [
     tag: "best-seller",
     img: "https://rukminim1.flixcart.com/image/416/416/xif0q/television/6/s/d/ua55cue60aklxl-samsung-original-imagp7uytgbgbsyp.jpeg?q=70",
     details: ["Operating System: Tizen", "Ultra HD Ready: 3840 x 2160 pixels", "1 year warranty"],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+  },
+  {
+    id: "785e0209-7ad7-4368-b00b-61ca070e298f",
+    title: "Mi X Series 50inch 4K TV",
+    desc: "Mi X Series 50inch 4K LED Smart TV with Android, Dolby Vision & 30W Dolby Audio",
+    category: "tvs",
+    price: "35,999",
+    tag: "best-seller",
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/television/l/d/q/-original-imaggsnkparsege3.jpeg?q=70",
+    details: ["Operating System: Android", "Ultra HD Ready: 3840 x 2160 pixels", "1 year warranty"],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
 ];
 
@@ -378,7 +535,7 @@ const TABLET_PRODUCTS = [
     desc: "Apple iPad (9th Gen) 64 GB ROM 10.2 inch with WiFi only silver",
     category: "tablets",
     price: "30,999",
-    tag: "best-seller",
+    tag: null,
     img: "https://rukminim1.flixcart.com/image/416/416/ktop5e80/tablet/6/o/s/mk2p3hn-a-apple-original-imag6yy8deumbvxz.jpeg?q=70",
     details: [
       "64 GB ROM",
@@ -388,9 +545,13 @@ const TABLET_PRODUCTS = [
       "A13 Bionic Chip",
       "1 Year Warranty",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
-    id: "4f283c40-316a-4ab1-bfcc-53b807bad98f",
+    id: "121e798f-d912-4734-a99c-3a8b5138a3f3",
     title: "APPLE iPad Air (5th Gen)",
     desc: "Apple iPad (5th Gen) 64 GB ROM 10.9 inch with WiFi Only Star light",
     category: "tablets",
@@ -405,6 +566,10 @@ const TABLET_PRODUCTS = [
       "Apple M1 Chip",
       "1 Year Warranty",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
   {
     id: "4f283c40-316a-4ab1-bfcc-53b807bad98f",
@@ -412,7 +577,7 @@ const TABLET_PRODUCTS = [
     desc: "Samsung Galaxy Tab S8+ with Stylus 8GB RAM 128 GB ROM",
     category: "tablets",
     price: "74,999",
-    tag: "best-seller",
+    tag: null,
     img: "https://rukminim1.flixcart.com/image/416/416/kzrbiq80/tablet/h/h/1/-original-imagbpezgxmpnctp.jpeg?q=70",
     details: [
       "64 GB ROM",
@@ -422,6 +587,73 @@ const TABLET_PRODUCTS = [
       "Apple M1 Chip",
       "1 Year Warranty",
     ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+  },
+  {
+    id: "c2ab0495-91ef-4628-bd8e-06ce2d1b42c1",
+    title: "Apple iPad Pro 256GB 11 inch",
+    desc: "Apple iPad Pro 256GB 11 inch with Wifi only (Space Grey)",
+    category: "tablets",
+    price: "94,999",
+    tag: "best-seller",
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/tablet/r/v/e/-original-imagj72vv3gydgem.jpeg?q=70",
+    details: [
+      "256 GB ROM",
+      "27.91 cm (11 inch) Display",
+      "12 MP Primary Camera | 12 MP Front",
+      "iPad OS 16",
+      "Apple M2 Chip",
+      "1 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+  },
+  {
+    id: "986e3964-6598-4fb8-9d50-32fbd59a1d0c",
+    title: "Apple iPad mini 64GB 8.3 inch",
+    desc: "Apple iPad mini 64 GB 8.3 inch with Wifi only (Space Grey)",
+    category: "tablets",
+    price: "44,999",
+    tag: null,
+    img: "https://rukminim1.flixcart.com/image/416/416/ktop5e80/tablet/q/a/f/mk7m3hn-a-apple-original-imag6ygf8zsvzpdg.jpeg?q=70",
+    details: [
+      "64 GB ROM",
+      "21.91 cm (8.3 inch) Display",
+      "12 MP Primary Camera | 12 MP Front",
+      "iPad OS 15",
+      "Apple A15 Bionic Processor",
+      "1 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+  },
+  {
+    id: "b7832bdf-8ebc-4921-bae4-554f381db2be",
+    title: "Samsung Galaxy Tab A8",
+    desc: "Samsung Galaxy Tab A8 3GB RAM 32 GB ROM 10.5inch with WIFI+4G",
+    category: "tablets",
+    price: "18,999",
+    tag: null,
+    img: "https://rukminim1.flixcart.com/image/416/416/ky7lci80/tablet/e/d/m/sm-x205nzaeinu-samsung-original-imagahrshg78gwvb.jpeg?q=70",
+    details: [
+      "32 GB ROM",
+      "26.91 cm (10.5 inch) Full HD Display",
+      "8 MP Primary Camera | 5 MP Front",
+      "Android 11, Battery: 7040 mAh",
+      "Octa Core Processor | Voice Call (Single Sim)",
+      "1 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
   },
 ];
 

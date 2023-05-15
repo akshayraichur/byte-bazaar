@@ -1,0 +1,686 @@
+{
+  "products": [
+    {
+      "id": "9fb9ef00-5228-4e06-b081-93618406b266",
+      "title": "Apple iPhone 14 Pro Max",
+      "desc": "The best in class smartphone from Apple",
+      "category": "mobiles",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/6/x/j/-original-imaghxejqvpwfqh2.jpeg?q=70",
+      "price": "1,27,999",
+      "tag": "best-seller",
+      "details": [
+        "Apple Bionic A16 Chipset, 6 core processor",
+        "48MP Main Camera + 12MP + 12MP | 12MP Front Camera",
+        "iOS 16",
+        "6.7inch Super Retina XDR Display",
+        "128GB ROM",
+        "1 year warranty for phone & 6 months for in-box accessories"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "1f61ee9c-048c-4d2a-a0d4-096c755f824b",
+      "title": "Apple iPhone 14 Pro",
+      "desc": "The best in class smartphone from Apple",
+      "category": "mobiles",
+      "price": "1,17,999",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/h/r/e/-original-imaghxeeme2n7hy7.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "Apple Bionic A16 Chipset, 6 core processor",
+        "48MP Main Camera + 12MP + 12MP | 12MP Front Camera",
+        "iOS 16",
+        "6.1inch Super Retina XDR Display",
+        "128GB ROM",
+        "1 year warranty for phone & 6 months for in-box accessories"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "7c160374-f72f-43f8-b0e2-0d679163c525",
+      "title": "Apple iPhone 14 Plus",
+      "desc": "The best in class smartphone from Apple",
+      "category": "mobiles",
+      "price": "95,999",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/c/4/d/-original-imaghx9qygjjg8hz.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "Apple Bionic A15 Chipset, 6 core processor",
+        "12MP Main Camera + 12MP | 12MP Front Camera",
+        "iOS 16",
+        "6.7inch Super Retina XDR Display",
+        "128GB ROM",
+        "1 year warranty for phone & 6 months for in-box accessories"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "6fe0cde5-82a8-4efc-8ca2-f10b5ef8f07a",
+      "title": "Apple iPhone 14",
+      "desc": "The best in class smartphone from Apple",
+      "category": "mobiles",
+      "price": "79,999",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/r/k/o/-original-imaghx9qtwbnhwvy.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "Apple Bionic A15 Chipset, 6 core processor",
+        "12MP Main Camera + 12MP | 12MP Front Camera",
+        "iOS 16",
+        "6.1inch Super Retina XDR Display",
+        "128GB ROM",
+        "1 year warranty for phone & 6 months for in-box accessories"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "8f345449-b72d-4bee-90f7-4e155ea7755f",
+      "title": "Samsung Galaxy S23 Ultra",
+      "desc": "The Samsung's best yet..",
+      "category": "mobiles",
+      "price": "1,27,999",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/2/s/7/-original-imagmg6gktts6sfy.jpeg?q=70",
+      "tag": "best-seller",
+      "details": [
+        "12 GB RAM | 256 GB ROM",
+        "6.8inch Quad HD+ Display",
+        "200 MP + 10 MP + 12 MP + 10 MP | 12MP Front Camera",
+        "Qualcomm Snapdragon 8 Gen 2 Processor",
+        "5000 mAh Lithium Ion Battery",
+        "1 year warranty for phone & 6 months for in-box accessories"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "25932b54-024c-4453-8b4b-d7018153d907",
+      "title": "Samsung Galaxy S23 Plus",
+      "desc": "The Samsung's best yet..",
+      "category": "mobiles",
+      "price": "95,999",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/8/c/x/-original-imagmg6gy7x3xwcg.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "8 GB RAM | 256 GB ROM",
+        "6.6 inch Full HD+ Display",
+        "50 MP + 10 MP + 12 MP | 12MP Front Camera",
+        "Qualcomm Snapdragon 8 Gen 2 Processor",
+        "4700 mAh Lithium Ion Battery",
+        "1 year warranty for phone & 6 months for in-box accessories"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "d299bae5-d5cf-412c-9194-f8ddbd6ca79c",
+      "title": "Nothing Phone 1",
+      "desc": "The first one from Nothing",
+      "category": "mobiles",
+      "price": "27,999",
+      "img": "https://rukminim1.flixcart.com/image/416/416/l5h2xe80/mobile/5/x/r/-original-imagg4xza5rehdqv.jpeg?q=70",
+      "tag": "best-seller",
+      "details": [
+        "8 GB RAM | 256 GB ROM",
+        "6.5 inch Full HD+ Display",
+        "50 MP + 50 MP | 16 MP Front Camera",
+        "Qualcomm Snapdragon 778G+ Processor",
+        "4500 mAh Lithium Ion Battery",
+        "1 year warranty for phone & 6 months for in-box accessories"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "9ce393c1-e400-415a-a465-68acdb8ed0ae",
+      "title": "Apple MacBook Pro 16inch M1 Pro",
+      "desc": "The best in class laptop from Apple",
+      "category": "laptops",
+      "price": "3,19,894",
+      "img": "https://rukminim1.flixcart.com/image/416/416/kuyf8nk0/computer/z/k/q/mkgr3hn-a-thin-and-light-laptop-apple-original-imag7yzp78bpnzyg.jpeg?q=70",
+      "tag": "best-seller",
+      "details": [
+        "Apple M1 Max Processor",
+        "32 Gb Unified Memory RAM",
+        "1TB SSD",
+        "16.2 inch Display",
+        "1 Year Limited Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "30ecd335-1af0-414d-adfd-077da5f02035",
+      "title": "Apple MacBook Pro 14inch M1 Max",
+      "desc": "The best in class laptop from Apple",
+      "category": "laptops",
+      "price": "2,19,894",
+      "img": "https://rukminim1.flixcart.com/image/416/416/kuyf8nk0/computer/3/n/s/mk183hn-a-laptop-apple-original-imag7yzkbgbwvwq3.jpeg?q=70",
+      "tag": "best-seller",
+      "details": [
+        "Apple M1 Pro Processor",
+        "22 Gb Unified Memory RAM",
+        "1TB SSD",
+        "14 inch Display",
+        "1 Year Limited Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "886a22b7-710b-460c-ab09-b9a2d36dc4fe",
+      "title": "Dell XPS 13 core i5 10th Gen",
+      "desc": "Dell's pride",
+      "category": "laptops",
+      "price": "1,04,100",
+      "img": "https://rukminim1.flixcart.com/image/416/416/kf2v3ww0/computer/h/t/m/dell-original-imafvm5ymhkzvdqu.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "Intel Core i5 Processor (10th Gen)",
+        "8GB",
+        "512 GB SSD",
+        "13.3 inch Display",
+        "1 Year Limited Warranty",
+        "Microsoft Office 365"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "aef6e1e1-a919-49c5-80e4-dad964f422ae",
+      "title": "Dell Inspiron Core i5 11th Gen",
+      "desc": "Dell's pride",
+      "category": "laptops",
+      "price": "53,490",
+      "img": "https://rukminim1.flixcart.com/image/416/416/kf2v3ww0/computer/h/t/m/dell-original-imafvm5ymhkzvdqu.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "Intel Core i5 Processor (11th Gen)",
+        "8GB",
+        "512 GB SSD",
+        "13.3 inch Display",
+        "1 Year Limited Warranty",
+        "Microsoft Office 365"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "a085d724-eade-46d3-8d3e-10d8132a7e95",
+      "title": "Dell Inspiron Core i3 11th Gen",
+      "desc": "Dell's pride",
+      "category": "laptops",
+      "price": "43,490",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/n/o/s/-original-imaghzah9mjvukjz.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "Intel Core i3 Processor (11th Gen)",
+        "16 GB",
+        "512 GB SSD",
+        "15.6 inch Display",
+        "1 Year Limited Warranty",
+        "Microsoft Office 365"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "6a30d42f-c31a-447a-bf48-98619ae45cd1",
+      "title": "SAMSUNG Galaxy Book3 Core i7 Core 13th Gen",
+      "desc": "Samsung's trying...",
+      "category": "laptops",
+      "price": "89,990",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/i/z/h/galaxy-book3-thin-and-light-laptop-samsung-original-imagnb2cuanuhzmp.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "Intel Core i7 Processor (13th Gen)",
+        "16GB",
+        "512 GB SSD",
+        "14 inch Display",
+        "1 Year Limited Warranty",
+        "Microsoft Office 365"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "d3ba2470-85fd-4af6-a0b0-18840540f942",
+      "title": "HP Pavilion Core i7 12th Gen",
+      "desc": "HP, one of the best",
+      "category": "laptops",
+      "price": "84,990",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/k/z/2/-original-imagp7pge3agtryz.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "Intel Core i7 Processor (12th Gen)",
+        "16 GB",
+        "512 GB SSD",
+        "13.3 inch Display",
+        "1 Year Limited Warranty",
+        "Microsoft Office 365"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "b9132679-6314-4c2c-b3a0-394f572d2f84",
+      "title": "Apple Macbook Air M2",
+      "desc": "With Apple's new processor, they are killing the market",
+      "category": "laptops",
+      "tag": "best-seller",
+      "price": "1,06,990",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/2/v/v/-original-imagfdeqter4sj2j.jpeg?q=70",
+      "details": [
+        "Apple M2 Processor",
+        "8 GB",
+        "256 GB SSD",
+        "13.3 inch Display",
+        "1 Year Limited Warranty",
+        "Microsoft Office 365"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "6dea9ccb-1a9e-484e-b9e1-a05dee8af8ee",
+      "title": "Sony A7 M2 Mirrorless Camera",
+      "desc": "SONY Alpha Full Frame ILCE-7M2K/BQ IN5 Mirrorless Camera Body with 28 - 70 mm Lens  (Black)",
+      "category": "cameras",
+      "price": "81,999",
+      "tag": null,
+      "img": "https://rukminim1.flixcart.com/image/416/416/l5jxt3k0/dslr-camera/m/n/a/-original-imagg7hsggshhwbz.jpeg?q=70",
+      "details": [
+        "4K/HD Format, High Performance Fast Hybrid AF",
+        "Effective Pixels: 24.3 MP",
+        "Sensor Type: CMOS",
+        "Full HD | Wifi Available",
+        "2 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "f92a8010-6c41-4463-bf28-113150360761",
+      "title": "Canon EOS 3000D DSLR Camera",
+      "desc": "Canon EOS 3000D camera 18 - 55 mm lens",
+      "category": "cameras",
+      "price": "30,490",
+      "img": "https://rukminim1.flixcart.com/image/416/416/jfbfde80/camera/n/r/n/canon-eos-eos-3000d-dslr-original-imaf3t5h9yuyc5zu.jpeg?q=70",
+      "tag": "best-seller",
+      "details": [
+        "Self-timer, Type C & HDMI",
+        "9 Auto Focus Points",
+        "3x Optical Zoom, WIFI, Full HD, 18MP",
+        "Sensor Type: CMOS",
+        "2 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "e899f7be-e396-48a8-9d73-fad7524b67ec",
+      "title": "Canon EOS 1500D DSLR Camera",
+      "desc": "Canon EOS 1500D camera 18 - 55 mm lens",
+      "category": "cameras",
+      "price": "34,490",
+      "tag": null,
+      "img": "https://rukminim1.flixcart.com/image/416/416/jfbfde80/camera/n/r/n/canon-eos-eos-3000d-dslr-original-imaf3t5h9yuyc5zu.jpeg?q=70",
+      "details": [
+        "Self-timer, Type C & HDMI",
+        "9 Auto Focus Points",
+        "3x Optical Zoom, WIFI, Full HD, 24.1 MP",
+        "Sensor Type: CMOS",
+        "2 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "7eeec888-4497-4e19-ae9f-dad4f6344a11",
+      "title": "Canon EOS M50 Mark II Mirrorless Camera",
+      "desc": "Canon EOS M50 camera 18 - 55 mm lens",
+      "category": "cameras",
+      "price": "34,490",
+      "img": "https://rukminim1.flixcart.com/image/416/416/knyxqq80/dslr-camera/r/y/x/digital-camera-eos-m50-mark-ii-eos-m50-mark-ii-canon-original-imag2gzkexzqhyhu.jpeg?q=70",
+      "tag": "best-seller",
+      "details": [
+        "4K and vertical movies, Live Youtube Streaming, Auto Video Transcoding",
+        "24.1 MP Effective Pixels",
+        "Full HD movie at 60p, 3.5mm external microphone input",
+        "Sensor Type: CMOS",
+        "2 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "0b57e3ac-eaee-42b2-ac1e-6f359b4237ad",
+      "title": "Canon EOS 200D Mark II DSLR Camera",
+      "desc": "Canon EOS 200D Mark II camera with 18 - 55 mm lens IS STM",
+      "category": "cameras",
+      "price": "60,490",
+      "img": "https://rukminim1.flixcart.com/image/416/416/juwzf680/dslr-camera/g/a/q/200d-ii-200d-ii-canon-original-imaffvrhzyqzayys.jpeg?q=70",
+      "tag": null,
+      "details": [
+        "4K and vertical movies, Live Youtube Streaming, Auto Video Transcoding",
+        "24.1 MP Effective Pixels",
+        "Full HD movie at 60p, 3.5mm external microphone input",
+        "Sensor Type: CMOS",
+        "Wifi Available | Full HD",
+        "2 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "a1b97690-d5db-4c49-9cdc-7bd66a71bb07",
+      "title": "Canon EOS 90D DSLR Camera",
+      "desc": "Canon EOS 90D camera with 18 - 55 mm lens IS STM",
+      "category": "cameras",
+      "price": "1,20,490",
+      "img": "https://rukminim1.flixcart.com/image/416/416/k1jlyfk0/dslr-camera/b/c/a/90d-eos-90d-canon-original-imafh3b6jvmzyesh.jpeg?q=70",
+      "tag": "best-seller",
+      "details": [
+        "4K (Uncropped/Cropped) and Dual pixel CMOS AF, Face Detection, 5 481 stable focus points",
+        "32.5 MP Effective Pixels",
+        "Sensor Type: CMOS",
+        "Wifi Available | Full HD",
+        "2 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "c612bb9c-a496-4e62-9962-bbdc1d6315d2",
+      "title": "Samsung 80 cm (32 Inch) HD TV",
+      "desc": "SAMSUNG 80 cm (32 Inch) HD Ready LED Smart Tizen TV with Bezel-free Design  (UA32T4380AKXXL)",
+      "category": "tvs",
+      "price": "13,999",
+      "tag": null,
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/television/m/n/p/-original-imagkzctc2gkvfgf.jpeg?q=70",
+      "details": ["Operating System: Tizen", "HD Ready: 1366 x 768 pixels", "1 year warranty"],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "effa30d5-1a1e-479a-a4d6-fb63fc0d4d8b",
+      "title": "OnePlus Y1 80 cm (32 inch) HD",
+      "desc": "OnePlus Y1 80 cm (32 inch) HD Ready LED Smart Android TV with Dolby Audio  (32HA0A00)",
+      "category": "tvs",
+      "price": "14,999",
+      "tag": null,
+      "img": "https://rukminim1.flixcart.com/image/416/416/kqidx8w0/television/m/1/v/32ha0a00-oneplus-original-imag4gy8yezxdhen.jpeg?q=70",
+      "details": ["Operating System: Android", "HD Ready: 1366 x 768 pixels", "1 year warranty"],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "de4da823-53d3-4d0b-9a5d-1093cc7041db",
+      "title": "Samsung Crystal 4k LED TV",
+      "desc": "Samsung Crystal 4k 108cm (43inch) Ultra HD (4k) LED Smart Tizen TV",
+      "category": "tvs",
+      "price": "29,999",
+      "tag": null,
+      "img": "https://rukminim1.flixcart.com/image/416/416/l3nco7k0/television/w/f/9/-original-imageq5ejeymhxam.jpeg?q=70",
+      "details": ["Operating System: Tizen", "Ultra HD Ready: 3840 x 2160 pixels", "1 year warranty"],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "b3083e5c-5877-4836-81b2-7e711eef5533",
+      "title": "Samsung The Frame 55inch",
+      "desc": "Samsung The Frame 138cm (55inch) QLED Ultra HD (4K) Smart Tizen TV with Matte Display",
+      "category": "tvs",
+      "price": "86,999",
+      "tag": "best-seller",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/television/u/h/n/-original-imaggwfzpgv9pbht.jpeg?q=70",
+      "details": ["Operating System: Tizen", "Ultra HD Ready: 3840 x 2160 pixels", "1 year warranty"],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "b8c82a75-a783-4114-ad29-86174e264b37",
+      "title": "Samsung Crystal 4K iSmart Series 50inch ",
+      "desc": "Samsung Crystal 4L iSmart Series 125cm (50 inch) Ultra HD (4k) LED Smart Tizen TV",
+      "category": "tvs",
+      "price": "45,999",
+      "tag": "best-seller",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/television/6/s/d/ua55cue60aklxl-samsung-original-imagp7uytgbgbsyp.jpeg?q=70",
+      "details": ["Operating System: Tizen", "Ultra HD Ready: 3840 x 2160 pixels", "1 year warranty"],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "785e0209-7ad7-4368-b00b-61ca070e298f",
+      "title": "Mi X Series 50inch 4K TV",
+      "desc": "Mi X Series 50inch 4K LED Smart TV with Android, Dolby Vision & 30W Dolby Audio",
+      "category": "tvs",
+      "price": "35,999",
+      "tag": "best-seller",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/television/l/d/q/-original-imaggsnkparsege3.jpeg?q=70",
+      "details": ["Operating System: Android", "Ultra HD Ready: 3840 x 2160 pixels", "1 year warranty"],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "4554f30d-6273-4503-a470-5c9e30afa442",
+      "title": "APPLE iPad (9th Gen) ",
+      "desc": "Apple iPad (9th Gen) 64 GB ROM 10.2 inch with WiFi only silver",
+      "category": "tablets",
+      "price": "30,999",
+      "tag": null,
+      "img": "https://rukminim1.flixcart.com/image/416/416/ktop5e80/tablet/6/o/s/mk2p3hn-a-apple-original-imag6yy8deumbvxz.jpeg?q=70",
+      "details": [
+        "64 GB ROM",
+        "25.91 cm (10.2 inch) Display",
+        "8 MP Primary Camera | 12 MP Front",
+        "iOS 15",
+        "A13 Bionic Chip",
+        "1 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "121e798f-d912-4734-a99c-3a8b5138a3f3",
+      "title": "APPLE iPad Air (5th Gen)",
+      "desc": "Apple iPad (5th Gen) 64 GB ROM 10.9 inch with WiFi Only Star light",
+      "category": "tablets",
+      "price": "57,999",
+      "tag": "best-seller",
+      "img": "https://rukminim1.flixcart.com/image/416/416/l0jwbrk0/tablet/9/a/n/-original-imagcbjsseuyg4z5.jpeg?q=70",
+      "details": [
+        "64 GB ROM",
+        "27.91 cm (10.9 inch) Display",
+        "12 MP Primary Camera | 12 MP Front",
+        "iPad OS 15",
+        "Apple M1 Chip",
+        "1 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "4f283c40-316a-4ab1-bfcc-53b807bad98f",
+      "title": "Samsung Galaxy Tab S8+",
+      "desc": "Samsung Galaxy Tab S8+ with Stylus 8GB RAM 128 GB ROM",
+      "category": "tablets",
+      "price": "74,999",
+      "tag": null,
+      "img": "https://rukminim1.flixcart.com/image/416/416/kzrbiq80/tablet/h/h/1/-original-imagbpezgxmpnctp.jpeg?q=70",
+      "details": [
+        "64 GB ROM",
+        "27.91 cm (10.9 inch) Display",
+        "12 MP Primary Camera | 12 MP Front",
+        "iPad OS 15",
+        "Apple M1 Chip",
+        "1 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "c2ab0495-91ef-4628-bd8e-06ce2d1b42c1",
+      "title": "Apple iPad Pro 256GB 11 inch",
+      "desc": "Apple iPad Pro 256GB 11 inch with Wifi only (Space Grey)",
+      "category": "tablets",
+      "price": "94,999",
+      "tag": "best-seller",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/tablet/r/v/e/-original-imagj72vv3gydgem.jpeg?q=70",
+      "details": [
+        "256 GB ROM",
+        "27.91 cm (11 inch) Display",
+        "12 MP Primary Camera | 12 MP Front",
+        "iPad OS 16",
+        "Apple M2 Chip",
+        "1 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "986e3964-6598-4fb8-9d50-32fbd59a1d0c",
+      "title": "Apple iPad mini 64GB 8.3 inch",
+      "desc": "Apple iPad mini 64 GB 8.3 inch with Wifi only (Space Grey)",
+      "category": "tablets",
+      "price": "44,999",
+      "tag": null,
+      "img": "https://rukminim1.flixcart.com/image/416/416/ktop5e80/tablet/q/a/f/mk7m3hn-a-apple-original-imag6ygf8zsvzpdg.jpeg?q=70",
+      "details": [
+        "64 GB ROM",
+        "21.91 cm (8.3 inch) Display",
+        "12 MP Primary Camera | 12 MP Front",
+        "iPad OS 15",
+        "Apple A15 Bionic Processor",
+        "1 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    },
+    {
+      "id": "b7832bdf-8ebc-4921-bae4-554f381db2be",
+      "title": "Samsung Galaxy Tab A8",
+      "desc": "Samsung Galaxy Tab A8 3GB RAM 32 GB ROM 10.5inch with WIFI+4G",
+      "category": "tablets",
+      "price": "18,999",
+      "tag": null,
+      "img": "https://rukminim1.flixcart.com/image/416/416/ky7lci80/tablet/e/d/m/sm-x205nzaeinu-samsung-original-imagahrshg78gwvb.jpeg?q=70",
+      "details": [
+        "32 GB ROM",
+        "26.91 cm (10.5 inch) Full HD Display",
+        "8 MP Primary Camera | 5 MP Front",
+        "Android 11, Battery: 7040 mAh",
+        "Octa Core Processor | Voice Call (Single Sim)",
+        "1 Year Warranty"
+      ],
+      "meta": {
+        "in_cart": false,
+        "in_wishlist": false
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "title": "Mobiles",
+      "subtitle": "Grab or Gone",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/6/x/j/-original-imaghxejqvpwfqh2.jpeg?q=70"
+    },
+    {
+      "id": 2,
+      "title": "Laptops",
+      "subtitle": "Handpicked",
+      "img": "https://rukminim1.flixcart.com/image/416/416/kuyf8nk0/computer/z/k/q/mkgr3hn-a-thin-and-light-laptop-apple-original-imag7yzp78bpnzyg.jpeg?q=70"
+    },
+    {
+      "id": 3,
+      "title": "Cameras",
+      "subtitle": "Best Deals",
+      "img": "https://rukminim1.flixcart.com/image/416/416/jn97frk0/dslr-camera/n/t/g/ilce-7rm3-sony-original-imaf9zhknvjh7ksp.jpeg?q=70"
+    },
+    {
+      "id": 4,
+      "title": "TVs",
+      "subtitle": "Widest Range",
+      "img": "https://rukminim1.flixcart.com/image/416/416/l3nco7k0/television/s/q/m/-original-imageq5eptqwxcv8.jpeg?q=70"
+    },
+    {
+      "id": 5,
+      "title": "Tablets",
+      "subtitle": "Best Sellers",
+      "img": "https://rukminim1.flixcart.com/image/416/416/xif0q/tablet/r/v/e/-original-imagj72vv3gydgem.jpeg?q=70"
+    },
+    {
+      "id": 6,
+      "title": "Gaming",
+      "subtitle": "Specials",
+      "img": "https://rukminim1.flixcart.com/image/416/416/kj7gwi80/gamingconsole/n/3/c/cfi-1008b01r-825-sony-no-original-imafytxenahqnnpu.jpeg?q=70"
+    }
+  ]
+}

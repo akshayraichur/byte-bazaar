@@ -28,6 +28,7 @@ export const ListingCardStyles = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    row-gap: 15px;
 
     h2 {
       text-decoration: none;

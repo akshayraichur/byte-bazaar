@@ -1,11 +1,15 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Alert, Container, Grid, Snackbar, Typography } from "@mui/material";
 import styled from "styled-components";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 
 import ListingCard from "../Components/ProductListingCard/ProductListingCard";
-import { PRODUCTS } from "../Constants/products";
+import { useEffect, useState } from "react";
+import { getAPI } from "../Utils/ApiCalls";
+import { GET_PRODUCTS } from "../Constants/URLs";
+import { useSearchParams } from "react-router-dom";
+import Shimmer from "../Components/Shimmer";
 
 const ProductListingStyles = styled.div`
   h2 {
@@ -25,6 +29,57 @@ const ProductListingStyles = styled.div`
 `;
 
 const ProductListing = () => {
+  const [searchParams] = useSearchParams();
+
+  const [products, setProducts] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [loading, setLoading] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [filters, setFitlers] = useState({ c: searchParams.get("c") });
+  const [snackbarConfig, setSnackbarConfig] = useState({
+    open: false,
+    severity: "success",
+    message: "",
+    autoCloseDuration: 6000,
+  });
+
+  const fetchProducts = async () => {
+    setLoading(true);
+    try {
+      let result = await getAPI(GET_PRODUCTS);
+      if (Array.isArray(result)) {
+        let filteredProducts = result;
+        if (filters.c) {
+          filteredProducts = result.filter((product) => product.category === filters.c);
+        }
+        setProducts(filteredProducts);
+      } else {
+        setSnackbarConfig((p) => ({
+          ...p,
+          open: true,
+          severity: "error",
+          message: "There was some problem loading the data.",
+        }));
+      }
+    } catch (error) {
+      setSnackbarConfig((p) => ({ ...p, open: true, severity: "error", message: error.message }));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const handleSnackbarClose = () => {
+    setSnackbarConfig({
+      open: false,
+      severity: "success",
+      message: "",
+      autoCloseDuration: 6000,
+    });
+  };
   return (
     <>
       <Container maxWidth="xl">
@@ -46,11 +101,14 @@ const ProductListing = () => {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
+              <br />
             </Grid>
 
             <Grid item xs={12} sm={9} md={9.5}>
               <h1>Product Details 🔍</h1>
-              {PRODUCTS.map((product) => (
+              {(loading || !products.length) &&
+                [1, 2, 3, 4, 5].map((item) => <Shimmer key={item} variant="product-listing" />)}
+              {products.map((product) => (
                 <ListingCard
                   key={product.id}
                   title={product.title}
@@ -62,6 +120,18 @@ const ProductListing = () => {
               ))}
             </Grid>
           </Grid>
+
+          {snackbarConfig.open && (
+            <Snackbar
+              open={snackbarConfig.open}
+              autoHideDuration={snackbarConfig.autoCloseDuration}
+              anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            >
+              <Alert severity={snackbarConfig.severity} onClose={handleSnackbarClose}>
+                {snackbarConfig.message}
+              </Alert>
+            </Snackbar>
+          )}
         </ProductListingStyles>
       </Container>
     </>
