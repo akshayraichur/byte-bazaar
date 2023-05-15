@@ -92,17 +92,17 @@ const ProductListing = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [filters, setFitlers] = useState({ c: [], price: false, rating: 0 });
+  const [filters, setFitlers] = useState({ c: [], price: null, rating: 0 });
   const [expandAccordion, setExpandAccordion] = useState(true);
 
   const fetchProducts = async () => {
     setLoading(true);
     try {
       let result = await getAPI(GET_PRODUCTS);
+      let filteredProducts = [];
 
       if (Array.isArray(result)) {
-        let filteredProducts = [];
-
+        // set category filter
         if (searchParams.get("c")?.trim()) {
           let filters = searchParams.get("c")?.split(",");
 
@@ -112,7 +112,32 @@ const ProductListing = () => {
 
           setProducts(filteredProducts);
         } else {
-          setProducts(result);
+          filteredProducts = result;
+        }
+        // set rating filter
+        if (Number(parseFloat(filters.rating).toFixed(1)) > 0.5) {
+          filteredProducts = [
+            ...filteredProducts.filter((p) => {
+              return Number(parseFloat(filters.rating).toFixed(1)) >= Number(parseFloat(p.rating).toFixed(1));
+            }),
+          ];
+
+          setProducts(filteredProducts);
+        } else {
+          setProducts(filteredProducts);
+        }
+        if (typeof filters.price === "boolean") {
+          // if true -> set from low to high
+          // else set from high to low
+          if (filters.price) {
+            filteredProducts = [...filteredProducts.sort((a, b) => Number(a.price) - Number(b.price))];
+          } else {
+            filteredProducts = [...filteredProducts.sort((a, b) => Number(b.price) - Number(a.price))];
+          }
+
+          setProducts(filteredProducts);
+        } else {
+          setProducts(filteredProducts);
         }
       } else {
         toast.error("There was some problem loading the products data.");
@@ -149,7 +174,7 @@ const ProductListing = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, [filters.c]);
+  }, [filters.c, filters.rating, filters.price]);
 
   const updateFilter = (e, type) => {
     if (type === FILTER_NAMES.CATEGORY) {
@@ -159,17 +184,24 @@ const ProductListing = () => {
       }
       if (!e.target.checked && filteredArray.includes(e.target.name)) {
         let index = filteredArray.indexOf(e.target.name);
-        console.log(index);
         filteredArray.splice(index, 1);
         console.log(filteredArray);
       }
       setFitlers((p) => ({ ...p, c: filteredArray }));
       setSearchParams({ c: filteredArray.length ? filteredArray.join(",") : "" });
+    } else if (type === FILTER_NAMES.RATING) {
+      setFitlers((p) => ({ ...p, rating: parseFloat(e.target.value).toFixed(1) }));
+    } else if (type === FILTER_NAMES.PRICE) {
+      if (e.target.value === "high-to-low") {
+        setFitlers((p) => ({ ...p, price: false }));
+      } else {
+        setFitlers((p) => ({ ...p, price: true }));
+      }
     }
   };
 
   const clearFilters = () => {
-    setFitlers({ c: "", price: false, rating: 0 });
+    setFitlers({ c: [], price: null, rating: 0 });
     setSearchParams({});
   };
 
@@ -202,7 +234,7 @@ const ProductListing = () => {
                             type="checkbox"
                             name={item.title.toLowerCase()}
                             id={`${item.title}-checkbox`}
-                            defaultChecked={filters.c?.includes(item.title.toLowerCase())}
+                            checked={filters.c?.includes(item.title.toLowerCase())}
                             onChange={(e) => updateFilter(e, FILTER_NAMES.CATEGORY)}
                           />
                           <label htmlFor={`${item.title}-checkbox`}>{item.title}</label>
@@ -218,11 +250,27 @@ const ProductListing = () => {
                     </p>
                     <div className="price-list-container">
                       <label htmlFor="price-filter-low">
-                        <input type="radio" name="price-filter" id="price-filter-low" /> Low to High
+                        <input
+                          type="radio"
+                          name="price-filter"
+                          id="price-filter-low"
+                          value="low-to-high"
+                          checked={filters.price}
+                          onChange={(e) => updateFilter(e, FILTER_NAMES.PRICE)}
+                        />{" "}
+                        Low to High
                       </label>
                       <br />
                       <label htmlFor="price-filter-high">
-                        <input type="radio" name="price-filter" id="price-filter-high" /> High to Low
+                        <input
+                          type="radio"
+                          name="price-filter"
+                          id="price-filter-high"
+                          value="high-to-low"
+                          checked={typeof filters.price === "boolean" ? !filters.price : false}
+                          onChange={(e) => updateFilter(e, FILTER_NAMES.PRICE)}
+                        />{" "}
+                        High to Low
                       </label>
                     </div>
                   </div>
@@ -242,6 +290,8 @@ const ProductListing = () => {
                         max="5"
                         step="0.5"
                         list="markers"
+                        value={filters.rating}
+                        onChange={(e) => updateFilter(e, FILTER_NAMES.RATING)}
                       />
 
                       <datalist id="markers">
@@ -257,6 +307,7 @@ const ProductListing = () => {
                         <option value="4.5" label="4.5"></option>
                         <option value="5" label="5"></option>
                       </datalist>
+                      <small style={{ fontSize: "0.6rem" }}>(0 means no rating is set)</small>
                     </div>
                   </div>
 
@@ -272,8 +323,7 @@ const ProductListing = () => {
               <h1>Product Listing 🔍</h1>
               {loading
                 ? [1, 2, 3, 4, 5].map((item) => <Shimmer key={item} variant="product-listing" />)
-                : /* TODO: Change this to products */
-                  products.map((product) => (
+                : products.map((product) => (
                     <ListingCard
                       key={product.id}
                       title={product.title}
@@ -281,6 +331,7 @@ const ProductListing = () => {
                       details={product.details}
                       id={product.id}
                       price={product.price}
+                      rating={product.rating}
                     />
                   ))}
 

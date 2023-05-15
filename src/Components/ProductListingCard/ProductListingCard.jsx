@@ -2,8 +2,10 @@ import { NavLink } from "react-router-dom";
 import { ListingCardStyles } from "./ProductListingCard.styles";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
+import { Chip } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
 
-const ProductListingCard = ({ title, img, details, id, price }) => {
+const ProductListingCard = ({ title, img, details, id, price, rating }) => {
   return (
     <ListingCardStyles>
       <div className="img-container">
@@ -22,7 +24,9 @@ const ProductListingCard = ({ title, img, details, id, price }) => {
               </ul>
             </div>
             <div className="pricing-details">
-              <p className="price-text">Rs {price} /-</p>
+              <p className="price-text">Rs {price.toLocaleString("en-IN")} /-</p>
+              {/* <p>Rating: {rating}</p> */}
+              <Chip variant="outlined" color="success" label={rating} icon={<StarIcon />} />
             </div>
           </div>
         </NavLink>
@@ -40,9 +44,10 @@ const ProductListingCard = ({ title, img, details, id, price }) => {
 ProductListingCard.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
   details: PropTypes.array,
+  rating: PropTypes.number.isRequired,
 };
 
 export default ProductListingCard;

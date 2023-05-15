@@ -71,6 +71,7 @@ export const ListingCardStyles = styled.div`
   .price-text {
     font-weight: 900;
     font-size: 1.7rem;
+    margin-bottom: 1rem;
 
     @media only screen and (width <= 799px) {
       font-size: 1.2rem;
