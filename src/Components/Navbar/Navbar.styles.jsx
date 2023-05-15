@@ -40,7 +40,7 @@ export const StyledNavbar = styled.nav`
     justify-content: center;
     width: 60%;
 
-    @media screen and (width <= 799px) {
+    @media only screen and (width < 799px) {
       display: none;
     }
   }

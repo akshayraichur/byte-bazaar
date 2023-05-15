@@ -4,7 +4,6 @@ import Card from "../Components/Card/Card";
 import { CATEGORY } from "../Constants/category";
 import { NavLink } from "react-router-dom";
 import { PRODUCTS } from "../Constants/products";
-import Footer from "../Components/Footer";
 
 const StyledHome = styled.div`
   transition: all 0.3s ease;
@@ -133,7 +132,7 @@ const Home = () => {
           <br />
           <br />
 
-          <h1>Best seller🏷️</h1>
+          <h1>Top picks for you ✨</h1>
           <Grid container spacing={1}>
             {PRODUCTS.filter((products) => products.tag === "best-seller").map((product) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
@@ -151,7 +150,6 @@ const Home = () => {
           </Grid>
         </StyledHome>
       </Container>
-      <Footer />
     </>
   );
 };

@@ -8,6 +8,11 @@ export const ListingCardStyles = styled.div`
   display: flex;
   column-gap: 2rem;
 
+  @media only screen and (width < 499px) {
+    padding: 1rem 0.1rem;
+    column-gap: 10px;
+  }
+
   .img-container {
     ${cardImageContainer}
     display: block;
@@ -15,6 +20,12 @@ export const ListingCardStyles = styled.div`
 
     @media only screen and (width < 799px) {
       width: 90px;
+    }
+
+    @media only screen and (width < 499px) {
+      width: 70px;
+      padding: 0.1rem;
+      /* border: 1px solid red; */
     }
   }
 
@@ -39,6 +50,14 @@ export const ListingCardStyles = styled.div`
         font-size: 1.2rem;
       }
     }
+    @media only screen and (width < 499px) {
+      h2 {
+        font-size: 1rem;
+      }
+      .description li {
+        font-size: 0.8rem;
+      }
+    }
   }
 
   .description {
@@ -55,6 +74,18 @@ export const ListingCardStyles = styled.div`
 
     @media only screen and (width <= 799px) {
       font-size: 1.2rem;
+    }
+  }
+
+  .btn-container {
+    width: 100%;
+    display: flex;
+    column-gap: 1rem;
+
+    @media only screen and (width < 499px) {
+      display: block;
+      button {
+      }
     }
   }
 `;

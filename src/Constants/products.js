@@ -19,6 +19,7 @@ const MOBILE_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.5,
   },
   {
     id: "1f61ee9c-048c-4d2a-a0d4-096c755f824b",
@@ -40,6 +41,7 @@ const MOBILE_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.2,
   },
   {
     id: "7c160374-f72f-43f8-b0e2-0d679163c525",
@@ -61,6 +63,7 @@ const MOBILE_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4,
   },
   {
     id: "6fe0cde5-82a8-4efc-8ca2-f10b5ef8f07a",
@@ -82,6 +85,7 @@ const MOBILE_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4,
   },
   {
     id: "8f345449-b72d-4bee-90f7-4e155ea7755f",
@@ -103,6 +107,7 @@ const MOBILE_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.5,
   },
   {
     id: "25932b54-024c-4453-8b4b-d7018153d907",
@@ -124,6 +129,7 @@ const MOBILE_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4,
   },
   {
     id: "d299bae5-d5cf-412c-9194-f8ddbd6ca79c",
@@ -145,6 +151,7 @@ const MOBILE_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.1,
   },
 ];
 
@@ -168,6 +175,7 @@ const LAPTOP_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.5,
   },
   {
     id: "30ecd335-1af0-414d-adfd-077da5f02035",
@@ -188,6 +196,7 @@ const LAPTOP_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.5,
   },
   {
     id: "886a22b7-710b-460c-ab09-b9a2d36dc4fe",
@@ -209,6 +218,7 @@ const LAPTOP_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3.5,
   },
   {
     id: "aef6e1e1-a919-49c5-80e4-dad964f422ae",
@@ -230,6 +240,7 @@ const LAPTOP_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3.2,
   },
   {
     id: "a085d724-eade-46d3-8d3e-10d8132a7e95",
@@ -251,6 +262,7 @@ const LAPTOP_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3,
   },
   {
     id: "6a30d42f-c31a-447a-bf48-98619ae45cd1",
@@ -272,6 +284,7 @@ const LAPTOP_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4,
   },
   {
     id: "d3ba2470-85fd-4af6-a0b0-18840540f942",
@@ -293,6 +306,7 @@ const LAPTOP_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3.5,
   },
   {
     id: "b9132679-6314-4c2c-b3a0-394f572d2f84",
@@ -314,6 +328,7 @@ const LAPTOP_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.5,
   },
 ];
 
@@ -337,6 +352,7 @@ const CAMERA_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4,
   },
   {
     id: "f92a8010-6c41-4463-bf28-113150360761",
@@ -357,6 +373,7 @@ const CAMERA_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3.8,
   },
   {
     id: "e899f7be-e396-48a8-9d73-fad7524b67ec",
@@ -377,6 +394,7 @@ const CAMERA_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 2,
   },
   {
     id: "7eeec888-4497-4e19-ae9f-dad4f6344a11",
@@ -397,6 +415,7 @@ const CAMERA_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4,
   },
   {
     id: "0b57e3ac-eaee-42b2-ac1e-6f359b4237ad",
@@ -418,6 +437,7 @@ const CAMERA_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3.4,
   },
   {
     id: "a1b97690-d5db-4c49-9cdc-7bd66a71bb07",
@@ -438,6 +458,7 @@ const CAMERA_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4,
   },
 ];
 
@@ -455,6 +476,7 @@ const TV_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 2.1,
   },
   {
     id: "effa30d5-1a1e-479a-a4d6-fb63fc0d4d8b",
@@ -469,6 +491,7 @@ const TV_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3,
   },
   {
     id: "de4da823-53d3-4d0b-9a5d-1093cc7041db",
@@ -483,6 +506,7 @@ const TV_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3.4,
   },
   {
     id: "b3083e5c-5877-4836-81b2-7e711eef5533",
@@ -497,6 +521,7 @@ const TV_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.5,
   },
   {
     id: "b8c82a75-a783-4114-ad29-86174e264b37",
@@ -511,6 +536,7 @@ const TV_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3.5,
   },
   {
     id: "785e0209-7ad7-4368-b00b-61ca070e298f",
@@ -525,6 +551,7 @@ const TV_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3.3,
   },
 ];
 
@@ -549,6 +576,7 @@ const TABLET_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4,
   },
   {
     id: "121e798f-d912-4734-a99c-3a8b5138a3f3",
@@ -570,6 +598,7 @@ const TABLET_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.5,
   },
   {
     id: "4f283c40-316a-4ab1-bfcc-53b807bad98f",
@@ -591,6 +620,7 @@ const TABLET_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3.5,
   },
   {
     id: "c2ab0495-91ef-4628-bd8e-06ce2d1b42c1",
@@ -612,6 +642,7 @@ const TABLET_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4.5,
   },
   {
     id: "986e3964-6598-4fb8-9d50-32fbd59a1d0c",
@@ -633,6 +664,7 @@ const TABLET_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 4,
   },
   {
     id: "b7832bdf-8ebc-4921-bae4-554f381db2be",
@@ -654,6 +686,134 @@ const TABLET_PRODUCTS = [
       in_cart: false,
       in_wishlist: false,
     },
+    rating: 3,
+  },
+];
+
+export const GAMING_PRODUCTS = [
+  {
+    id: "40d0ba03-b76c-49f9-8aa4-dd1b012fde10",
+    title: "Sony Playstation 5",
+    desc: "The best sony has to offer",
+    category: "gaming",
+    price: "49,999",
+    tag: "best-seller",
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/gamingconsole/5/n/u/-original-imaghyykrhvewh4y.jpeg?q=70",
+    details: [
+      "PS 5",
+      "No games included",
+      "Maximize your play sessions with near instant load times for installed PS5 games",
+      "PS5 consoles support 8K Output",
+      "Upto 120fps",
+      "1 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+    rating: 5,
+  },
+  {
+    id: "c2c9059a-67d6-4371-8d9a-93a25236e7b9",
+    title: "Sony Playstation 5 Digital Edition",
+    desc: "The best sony has to offer",
+    category: "gaming",
+    price: "39,999",
+    tag: "best-seller",
+    img: "https://rukminim1.flixcart.com/image/416/416/kj7gwi80/gamingconsole/n/3/c/cfi-1008b01r-825-sony-no-original-imafytxenahqnnpu.jpeg?q=70",
+    details: [
+      "PS 5",
+      "No games included | Online games",
+      "Maximize your play sessions with near instant load times for installed PS5 games",
+      "PS5 consoles support 8K Output",
+      "Upto 120fps",
+      "1 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+    rating: 4.5,
+  },
+  {
+    id: "224a2d4e-5675-492f-8c7b-3b308dc1a3fa",
+    title: "Sony Playstation 4 1 TB",
+    desc: "The prev gen sony",
+    category: "gaming",
+    price: "34,999",
+    tag: null,
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/gamingconsole/y/v/b/1tb-4-slim-console-playstation-yes-original-imagndbvjhqgb98g.jpeg?q=70",
+    details: [
+      "PS 4",
+      "No games included ",
+      "Maximize your play sessions with near instant load times for installed PS4 games",
+      "PS4 consoles support 1080p Output",
+      "Upto 60fps",
+      "1 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+    rating: 4,
+  },
+  {
+    id: "f99ab792-a9b5-4f5c-b80d-46ae89c0bdae",
+    title: "Sony Playstation 4 500 GB",
+    desc: "The prev gen sony",
+    category: "gaming",
+    price: "36,999",
+    tag: null,
+    img: "https://rukminim1.flixcart.com/image/416/416/xif0q/gamingconsole/5/e/1/500-4-slim-console-playstation-yes-original-imagmt5af2vfuk7f.jpeg?q=70",
+    details: [
+      "PS 4",
+      "No games included ",
+      "Maximize your play sessions with near instant load times for installed PS4 games",
+      "PS4 consoles support 1080p Output",
+      "Upto 60fps",
+      "1 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+    rating: 3.5,
+  },
+  {
+    id: "715775e2-5261-4cc2-9411-c513f83c9c62",
+    title: "Microsoft Xbox Series S",
+    desc: "The best Microsoft has to offer",
+    category: "gaming",
+    price: "36,999",
+    tag: "best-seller",
+    img: "https://rukminim1.flixcart.com/image/416/416/kuu4x3k0/gamingconsole/h/v/d/512-series-s-with-extra-controller-black-xbox-no-original-imag7vcwzjkx5bkg.jpeg?q=70",
+    details: ["Xbox series s", "No games included", "1 Year Warranty"],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+    rating: 4.5,
+  },
+  {
+    id: "8d59566d-befd-48eb-9017-401879848d4c",
+    title: "Nintendo Switch OLED Console",
+    desc: "NINTENDO Switch OLED Console with Neon Blue Neon Red Joy Con 64 GB  (Black)",
+    category: "gaming",
+    price: "30,999",
+    tag: "best-seller",
+    img: "https://rukminim1.flixcart.com/image/416/416/kulk9zk0/gamingconsole/a/v/a/64-switch-oled-console-with-neon-blue-neon-red-joy-con-nintendo-original-imag7zz5snxfrsa4.jpeg?q=70",
+    details: [
+      "Switch",
+      "No games included",
+      "7-inch OLED screen - Enjoy vivid colors and crisp contrast",
+      "64 GB internal storage",
+      "1 Year Warranty",
+    ],
+    meta: {
+      in_cart: false,
+      in_wishlist: false,
+    },
+    rating: 4.5,
   },
 ];
 
@@ -663,4 +823,5 @@ export const PRODUCTS = [
   ...CAMERA_PRODUCTS,
   ...TV_PRODUCTS,
   ...TABLET_PRODUCTS,
+  ...GAMING_PRODUCTS,
 ];

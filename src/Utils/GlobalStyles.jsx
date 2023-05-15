@@ -91,7 +91,6 @@ export const GlobalStyles = createGlobalStyle`
   footer{
     margin: 2rem 0 0 0;
     background-color: ${(props) => props.theme.colors.text};
-    height: 300px;
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -100,6 +99,7 @@ export const GlobalStyles = createGlobalStyle`
     h2{
       font-family: 'Lora', serif;
     }
+
   }
 
   .footer-company{
