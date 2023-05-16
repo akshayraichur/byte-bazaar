@@ -6,6 +6,9 @@ import { NavLink } from "react-router-dom";
 import { PRODUCTS } from "../Constants/products";
 import Button from "../Components/Button/Button";
 
+import { useContext } from "react";
+import { UserContext } from "../store/UserContext";
+
 const StyledHome = styled.div`
   transition: all 0.3s ease;
   text-decoration: none;
@@ -32,7 +35,7 @@ const StyledHome = styled.div`
 
   .header-description {
     font-family: "Lora", serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin: 1rem 0;
   }
 
@@ -81,6 +84,7 @@ const StyledHome = styled.div`
 `;
 
 const Home = () => {
+  const { user } = useContext(UserContext);
   return (
     <>
       <Container maxWidth="xl">
@@ -88,7 +92,7 @@ const Home = () => {
           <div className="header">
             <div className="header-text-container">
               <h2 className="header-title">
-                Welcome to our tech-savvy world! <br />
+                {user.name ? `Welcome ${user.name}!` : "Welcome to our tech-savvy world!"} <br />
               </h2>
               <p className="header-description">
                 We are thrilled to have you, Our platform is designed to provide you with a seamless shopping
@@ -136,7 +140,7 @@ const Home = () => {
           <br />
           <br />
 
-          <h1>Top picks for you ✨</h1>
+          <h1>{user.name ? `Top picks for you, ${user.name.split(" ")[0]} ✨` : "Top picks for you ✨"}</h1>
           <Grid container spacing={1}>
             {PRODUCTS.filter((products) => products.tag === "best-seller").map((product) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>

@@ -6,6 +6,8 @@ import CartDetails from "../screens/Cart";
 import Wishlist from "../screens/Wishlist";
 import Profile from "../screens/Profile";
 import ProductListing from "../screens/ProductListing";
+import Login from "../screens/Login";
+import Signup from "../screens/Signup";
 
 const RouteDetails = () => (
   <Routes>
@@ -15,6 +17,8 @@ const RouteDetails = () => (
     <Route path="/cart" element={<CartDetails />}></Route>
     <Route path="/wishlist" element={<Wishlist />}></Route>
     <Route path="/profile" element={<Profile />}></Route>
+    <Route path="/login" element={<Login />}></Route>
+    <Route path="/signup" element={<Signup />}></Route>
   </Routes>
 );
 

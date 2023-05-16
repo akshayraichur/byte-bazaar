@@ -16,6 +16,7 @@ import Shimmer from "../Components/Shimmer";
 import Button from "../Components/Button/Button";
 import { toast } from "react-toastify";
 import { FILTER_NAMES } from "../Constants/ProductListing";
+import Footer from "../Components/Footer";
 
 const ProductListingStyles = styled.div`
   margin: 1rem 0 0 0;
@@ -345,6 +346,7 @@ const ProductListing = () => {
           </Grid>
         </ProductListingStyles>
       </Container>
+      <Footer />
     </>
   );
 };
