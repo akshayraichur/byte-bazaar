@@ -186,7 +186,6 @@ const ProductListing = () => {
       if (!e.target.checked && filteredArray.includes(e.target.name)) {
         let index = filteredArray.indexOf(e.target.name);
         filteredArray.splice(index, 1);
-        console.log(filteredArray);
       }
       setFitlers((p) => ({ ...p, c: filteredArray }));
       setSearchParams({ c: filteredArray.length ? filteredArray.join(",") : "" });
