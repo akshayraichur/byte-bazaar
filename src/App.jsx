@@ -5,6 +5,8 @@ import RouteDetails from "./Utils/Routes";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  console.log(import.meta.env.VITE_FIREBASE_PROJECT_ID);
+  console.log(import.meta.env.VITE_FIREBASE_API_KEY);
   return (
     <>
       <Navbar />
