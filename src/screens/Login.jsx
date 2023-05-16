@@ -18,6 +18,10 @@ const StyledLogin = styled.div`
     margin-bottom: 2rem;
   }
 
+  @media only screen and (width < 899px) {
+    height: 70vh;
+  }
+
   .login-container {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     border-radius: ${(props) => props.theme.borderRadius.card};
@@ -46,6 +50,18 @@ const StyledLogin = styled.div`
 
     :focus {
       outline: 1px solid ${(props) => props.theme.colors.text};
+    }
+
+    @media only screen and (width <= 599px) {
+      width: 100%;
+    }
+  }
+
+  .login-btn {
+    width: 70%;
+
+    @media only screen and (width <= 599px) {
+      width: 100%;
     }
   }
 
@@ -137,7 +153,7 @@ const Login = () => {
                 </div>
               </div>
 
-              <Button color="green" type="submit" variant="filled" style={{ width: "70%" }} isLoading={isLoading}>
+              <Button color="green" type="submit" variant="filled" className="login-btn" isLoading={isLoading}>
                 Login
               </Button>
             </form>
