@@ -6,6 +6,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth } from "../store/firebase";
 import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
+import Footer from "../Components/Footer";
 
 const StyledLogin = styled.div`
   width: 100%;
@@ -163,6 +164,7 @@ const Login = () => {
           </div>
         </StyledLogin>
       </Container>
+      <Footer />
     </>
   );
 };

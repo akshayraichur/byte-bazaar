@@ -8,6 +8,7 @@ import Button from "../Components/Button/Button";
 
 import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
+import Footer from "../Components/Footer";
 
 const StyledHome = styled.div`
   transition: all 0.3s ease;
@@ -158,6 +159,7 @@ const Home = () => {
           </Grid>
         </StyledHome>
       </Container>
+      <Footer />
     </>
   );
 };
