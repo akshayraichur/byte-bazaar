@@ -9,7 +9,7 @@ function App() {
     <>
       <Navbar />
       <RouteDetails />
-      <ToastContainer theme="dark" />
+      <ToastContainer theme="dark" autoClose={2500} />
     </>
   );
 }

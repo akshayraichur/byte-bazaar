@@ -9,8 +9,20 @@ import ProfileIcon from "../../assets/Icons/ProfileIcon";
 import logo from "../../../icon.png";
 
 import { StyledNavbar } from "./Navbar.styles";
+import LoginIcon from "../../assets/Icons/LoginIcon";
+import { useContext } from "react";
+import { UserContext } from "../../store/UserContext";
+import LogoutIcon from "../../assets/Icons/Logout";
+import { firebaseAuth } from "../../store/firebase";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const { user } = useContext(UserContext);
+
+  const handleLogout = () => {
+    firebaseAuth.signOut();
+    toast("Logged out!");
+  };
   return (
     <StyledNavbar>
       <Container maxWidth="xl" className="nav-container">
@@ -22,17 +34,27 @@ const Navbar = () => {
           <input type="text" placeholder="Search product by name..." className="search-input" />
         </div>
         <div className="icon-container">
-          <NavLink to="/wishlist" className="icon">
+          <NavLink to="/wishlist" className="icon" title="Whislist">
             <WishListIcon />
           </NavLink>
 
-          <NavLink to="/cart" className="icon">
+          <NavLink to="/cart" className="icon" title="Cart">
             <ShoppingCartIcon />
           </NavLink>
 
-          <NavLink to="/profile" className="icon">
+          <NavLink to="/profile" className="icon" title="Profile">
             <ProfileIcon />
           </NavLink>
+
+          {!user.token ? (
+            <NavLink to="/login" className="icon" title="Login">
+              <LoginIcon />
+            </NavLink>
+          ) : (
+            <span onClick={handleLogout} className="icon" title="Logout">
+              <LogoutIcon />
+            </span>
+          )}
         </div>
 
         <div className="sm-search-container">

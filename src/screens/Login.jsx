@@ -5,7 +5,7 @@ import Button from "../Components/Button/Button";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth } from "../store/firebase";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const StyledLogin = styled.div`
   width: 100%;
@@ -13,6 +13,10 @@ const StyledLogin = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
 
   .login-container {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -57,12 +61,14 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     signInWithEmailAndPassword(firebaseAuth, inputValues.email, inputValues.password)
       .then((res) => {
-        toast(`Welcome ${inputValues.name}!`);
+        toast(`Welcome ${res?.user?.displayName}!`);
         let userDetails = {
           displayName: res.user.displayName,
           email: res.user.email,
@@ -75,6 +81,9 @@ const Login = () => {
       })
       .catch((e) => {
         toast(e.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -128,10 +137,13 @@ const Login = () => {
                 </div>
               </div>
 
-              <Button type="submit" variant="outlined" style={{ width: "70%" }}>
+              <Button color="green" type="submit" variant="filled" style={{ width: "70%" }} isLoading={isLoading}>
                 Login
               </Button>
             </form>
+            <small>
+              Dont have an account yet? <NavLink to="/signup">Create one here!</NavLink>
+            </small>
           </div>
         </StyledLogin>
       </Container>
