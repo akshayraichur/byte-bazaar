@@ -2,8 +2,8 @@ import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "../Components/Button/Button";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { firebaseAuth } from "../store/firebase";
+import { createUserWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { GoogleProvider, firebaseAuth } from "../config/firebase";
 import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
 import Footer from "../Components/Footer";
@@ -107,6 +107,14 @@ const Signup = () => {
       });
   };
 
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(firebaseAuth, GoogleProvider);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
   useEffect(() => {
     firebaseAuth.onAuthStateChanged((res) => {
       if (res?.accessToken) {
@@ -172,6 +180,12 @@ const Signup = () => {
                 Create my account
               </Button>
             </form>
+            <div>
+              <small>Dont like typing? We have got you covered!</small>
+              <Button type="submit" color="orange" variant="outlined" className="login-btn" onClick={signInWithGoogle}>
+                Signup with Google
+              </Button>
+            </div>
             <small>
               Remember creating an account? <NavLink to="/login">Login instead!</NavLink>
             </small>

@@ -13,7 +13,7 @@ import LoginIcon from "../../assets/Icons/LoginIcon";
 import { useContext } from "react";
 import { UserContext } from "../../store/UserContext";
 import LogoutIcon from "../../assets/Icons/Logout";
-import { firebaseAuth } from "../../store/firebase";
+import { firebaseAuth } from "../../config/firebase";
 import { toast } from "react-toastify";
 
 const Navbar = () => {

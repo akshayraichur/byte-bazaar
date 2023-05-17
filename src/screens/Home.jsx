@@ -161,7 +161,7 @@ const Home = () => {
                   img={product.img}
                   subtitle={product.subtitle}
                   price={product.price}
-                  hrefLink={`/products/${product.id}`}
+                  hrefLink={`/details/${product.id}`}
                   onBtnClick={addToCartHandler}
                 />
               </Grid>

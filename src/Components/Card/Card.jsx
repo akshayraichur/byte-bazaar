@@ -1,6 +1,7 @@
 import { StyledCard, StyledCategoryContents, StyledProductContents } from "./Card.styles";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
+import { NavLink } from "react-router-dom";
 
 const CardImageContainer = ({ img, title }) => (
   <div className="img-container">
@@ -18,23 +19,25 @@ const CategoryContents = ({ title, subtitle, children }) => {
   );
 };
 
-const ProductContents = ({ title, price, children, onBtnClick }) => {
+const ProductContents = ({ title, price, children, onBtnClick, hrefLink }) => {
   return (
     <StyledProductContents>
-      {children}
-      <h3 className="card-title">{title}</h3>
-      <h4 className="card-price">₹{price}/-</h4>
-      <div className="btn-container">
-        <Button variant="filled" color="orange" onClick={onBtnClick}>
-          Add to Cart
-        </Button>
-      </div>
+      <NavLink to={hrefLink} className="navlink">
+        {children}
+        <h3 className="card-title">{title}</h3>
+        <h4 className="card-price">₹{price}/-</h4>
+        <div className="btn-container">
+          <Button variant="filled" color="orange" onClick={onBtnClick}>
+            Add to Cart
+          </Button>
+        </div>
+      </NavLink>
     </StyledProductContents>
   );
 };
 
 const Card = (props) => {
-  const { children, variant, title, img, subtitle, price, onBtnClick } = props;
+  const { children, variant, title, img, subtitle, price, onBtnClick, hrefLink } = props;
   return (
     <StyledCard>
       {variant === "category" && (
@@ -43,7 +46,7 @@ const Card = (props) => {
         </CategoryContents>
       )}
       {variant === "product" && (
-        <ProductContents title={title} img={img} price={price} onBtnClick={onBtnClick}>
+        <ProductContents hrefLink={hrefLink} title={title} img={img} price={price} onBtnClick={onBtnClick}>
           <CardImageContainer img={img} title={title} />
         </ProductContents>
       )}
@@ -69,6 +72,7 @@ ProductContents.propTypes = {
   price: PropTypes.string,
   children: PropTypes.node,
   onBtnClick: PropTypes.func,
+  hrefLink: PropTypes.string,
 };
 
 Card.propTypes = {
@@ -80,6 +84,7 @@ Card.propTypes = {
   subtitle: PropTypes.string,
   price: PropTypes.string,
   onBtnClick: PropTypes.func,
+  hrefLink: PropTypes.string,
 };
 
 Card.defaultProps = {
@@ -88,6 +93,7 @@ Card.defaultProps = {
   title: "Cart Title",
   img: "",
   onBtnClick: () => null,
+  hrefLink: "",
 };
 
 export default Card;
