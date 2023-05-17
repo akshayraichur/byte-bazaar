@@ -9,6 +9,7 @@ import Button from "../Components/Button/Button";
 import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
 import Footer from "../Components/Footer";
+import { toast } from "react-toastify";
 
 const StyledHome = styled.div`
   transition: all 0.3s ease;
@@ -86,6 +87,14 @@ const StyledHome = styled.div`
 
 const Home = () => {
   const { user } = useContext(UserContext);
+
+  const addToCartHandler = () => {
+    if (user?.token) {
+      // TODO: send in the details to add the data to the cart
+    } else {
+      toast.error("You cannot add product to cart without logging in.");
+    }
+  };
   return (
     <>
       <Container maxWidth="xl">
@@ -153,6 +162,7 @@ const Home = () => {
                   subtitle={product.subtitle}
                   price={product.price}
                   hrefLink={`/products/${product.id}`}
+                  onBtnClick={addToCartHandler}
                 />
               </Grid>
             ))}

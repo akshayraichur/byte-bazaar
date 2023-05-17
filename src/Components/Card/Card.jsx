@@ -18,14 +18,14 @@ const CategoryContents = ({ title, subtitle, children }) => {
   );
 };
 
-const ProductContents = ({ title, price, children }) => {
+const ProductContents = ({ title, price, children, onBtnClick }) => {
   return (
     <StyledProductContents>
       {children}
       <h3 className="card-title">{title}</h3>
       <h4 className="card-price">₹{price}/-</h4>
       <div className="btn-container">
-        <Button variant="filled" color="orange">
+        <Button variant="filled" color="orange" onClick={onBtnClick}>
           Add to Cart
         </Button>
       </div>
@@ -34,7 +34,7 @@ const ProductContents = ({ title, price, children }) => {
 };
 
 const Card = (props) => {
-  const { children, variant, title, img, subtitle, price } = props;
+  const { children, variant, title, img, subtitle, price, onBtnClick } = props;
   return (
     <StyledCard>
       {variant === "category" && (
@@ -43,7 +43,7 @@ const Card = (props) => {
         </CategoryContents>
       )}
       {variant === "product" && (
-        <ProductContents title={title} img={img} price={price}>
+        <ProductContents title={title} img={img} price={price} onBtnClick={onBtnClick}>
           <CardImageContainer img={img} title={title} />
         </ProductContents>
       )}
@@ -68,6 +68,7 @@ ProductContents.propTypes = {
   title: PropTypes.string,
   price: PropTypes.string,
   children: PropTypes.node,
+  onBtnClick: PropTypes.func,
 };
 
 Card.propTypes = {
@@ -78,6 +79,7 @@ Card.propTypes = {
   height: PropTypes.string,
   subtitle: PropTypes.string,
   price: PropTypes.string,
+  onBtnClick: PropTypes.func,
 };
 
 Card.defaultProps = {
@@ -85,6 +87,7 @@ Card.defaultProps = {
   variant: "category",
   title: "Cart Title",
   img: "",
+  onBtnClick: () => null,
 };
 
 export default Card;
