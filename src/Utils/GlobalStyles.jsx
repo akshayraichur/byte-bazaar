@@ -125,4 +125,17 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+  .Toastify__toast, .Toastify__toast-body {
+    background-color: ${(props) => props.theme.colors.containerColor};
+    color: ${(props) => props.theme.colors.text};
+  }
+
+  .Toastify__close-button{
+    color: ${(props) => props.theme.colors.text};
+  }
+
+  .Toastify__toast-theme--colored.Toastify__toast--error{
+    color: ${(props) => props.theme.colors.orange};
+  }
+
 `;

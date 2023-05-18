@@ -7,16 +7,18 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import ListingCard from "../Components/ProductListingCard/ProductListingCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { getAPI } from "../Utils/ApiCalls";
 import { GET_CATEGORIES, GET_PRODUCTS } from "../Constants/URLs";
 import { useSearchParams } from "react-router-dom";
 import Shimmer from "../Components/Shimmer";
-// import { PRODUCTS } from "../Constants/products";
 import Button from "../Components/Button/Button";
 import { toast } from "react-toastify";
 import { FILTER_NAMES } from "../Constants/ProductListing";
 import Footer from "../Components/Footer";
+import { firebaseAuth, firebaseDB } from "../config/firebase";
+import { UserContext } from "../store/UserContext";
+import { addDoc, collection, doc, getDocs, updateDoc } from "firebase/firestore";
 
 const ProductListingStyles = styled.div`
   margin: 1rem 0 0 0;
@@ -88,6 +90,7 @@ const ProductListingStyles = styled.div`
 `;
 
 const ProductListing = () => {
+  const { user, isAuthenticated } = useContext(UserContext);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [products, setProducts] = useState([]);
@@ -95,6 +98,10 @@ const ProductListing = () => {
   const [loading, setLoading] = useState(false);
   const [filters, setFitlers] = useState({ c: [], price: null, rating: 0 });
   const [expandAccordion, setExpandAccordion] = useState(true);
+  const [addToCartBtnLoading, setAddToCartBtnLoading] = useState(false);
+  const [addToWishlistBtnLoading, setAddToWishlistBtnLoading] = useState(false);
+  const selectedProductForCartRef = useRef(null);
+  const selectedProductForWishlist = useRef(null);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -203,6 +210,85 @@ const ProductListing = () => {
   const clearFilters = () => {
     setFitlers({ c: [], price: null, rating: 0 });
     setSearchParams({});
+  };
+
+  const handleCartUpdate = async (product) => {
+    if (!isAuthenticated) {
+      toast.info("Please login to add product to cart");
+      return;
+    }
+    selectedProductForCartRef.current = product.id; // for loading that specific button
+    setAddToCartBtnLoading(true);
+    const cartRef = collection(firebaseDB, "cart");
+
+    try {
+      const response = await getDocs(cartRef);
+      const data = response.docs.map((items) => ({ ...items.data(), id: items.id }));
+
+      let findDoc = data.find((p) => p.productId === product.id && user?.uid === p.userId);
+      if (!findDoc) {
+        // here, you have to add the doc to firebase
+        await addDoc(cartRef, {
+          productTitle: product.title,
+          productPricing: product.price,
+          productCategory: product.category,
+          productImg: product.img,
+          userId: user?.uid,
+          productRating: product.rating,
+          productQuantity: 1,
+          productId: product.id,
+        });
+        toast.success("Product added to cart");
+      } else {
+        // here, you have to update the firebase doc.
+        const cartDoc = doc(firebaseDB, "cart", findDoc.id);
+        await updateDoc(cartDoc, { productQuantity: findDoc.productQuantity + 1 });
+        toast.success("Product added to cart");
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setAddToCartBtnLoading(false);
+      selectedProductForCartRef.current = null;
+    }
+  };
+
+  const handleWishlistUpdate = async (product) => {
+    if (!isAuthenticated) {
+      toast.info("Please login to add product to wishlist");
+      return;
+    }
+
+    selectedProductForWishlist.current = product.id;
+    setAddToWishlistBtnLoading(true);
+    const wishlistDBRef = collection(firebaseDB, "wishlist");
+
+    try {
+      const response = await getDocs(wishlistDBRef);
+      const data = response.docs.map((items) => ({ ...items.data(), id: items.id }));
+
+      let findProduct = data.find((p) => p.productId === product.id && user?.uid === p.userId);
+
+      if (!findProduct) {
+        await addDoc(wishlistDBRef, {
+          productTitle: product.title,
+          productPricing: product.price,
+          productCategory: product.category,
+          productImg: product.img,
+          userId: user?.uid,
+          productRating: product.rating,
+          productId: product.id,
+        });
+        toast.success("Product added to Wishlist");
+      } else {
+        toast.error("You have already added this product to wishlist, go to wishlist page");
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setAddToWishlistBtnLoading(false);
+      selectedProductForWishlist.current = null;
+    }
   };
 
   return (
@@ -332,6 +418,13 @@ const ProductListing = () => {
                       id={product.id}
                       price={product.price}
                       rating={product.rating}
+                      handleCartUpdate={() => handleCartUpdate(product)}
+                      handleWishlistUpdate={() => handleWishlistUpdate(product)}
+                      addToCartBtnLoading={selectedProductForCartRef.current === product.id && addToCartBtnLoading}
+                      addToWishlistBtbLoading={
+                        selectedProductForWishlist.current === product.id && addToWishlistBtnLoading
+                      }
+                      page="product-listing"
                     />
                   ))}
 

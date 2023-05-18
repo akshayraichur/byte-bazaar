@@ -31,6 +31,7 @@ const Profile = () => {
       </Avatar>
 
       <h2>Hi, {user.name}</h2>
+      <p>Email: {user?.email}</p>
       <p>Hope you are having a great day so far!</p>
     </div>
   );

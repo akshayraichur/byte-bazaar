@@ -5,7 +5,50 @@ import Button from "../Button/Button";
 import { Chip } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 
-const ProductListingCard = ({ title, img, details, id, price, rating }) => {
+const ProductListingCard = ({
+  title,
+  img,
+  details,
+  id,
+  price,
+  rating,
+  handleCartUpdate,
+  handleWishlistUpdate,
+  addToCartBtnLoading,
+  addToWishlistBtbLoading,
+  page,
+}) => {
+  let CTAButtons;
+  if (page === "product-listing") {
+    CTAButtons = (
+      <>
+        <Button variant="filled" color="orange" onClick={handleCartUpdate} isLoading={addToCartBtnLoading}>
+          Add to cart
+        </Button>
+        <Button variant="filled" onClick={handleWishlistUpdate} isLoading={addToWishlistBtbLoading}>
+          Add to wishlist
+        </Button>
+      </>
+    );
+  }
+  if (page === "cart") {
+    CTAButtons = (
+      <>
+        <Button variant="filled" onClick={handleWishlistUpdate} isLoading={addToWishlistBtbLoading}>
+          Add to wishlist
+        </Button>
+      </>
+    );
+  }
+  if (page === "wishlist") {
+    CTAButtons = (
+      <>
+        <Button variant="filled" color="orange" onClick={handleCartUpdate} isLoading={addToCartBtnLoading}>
+          Add to cart
+        </Button>
+      </>
+    );
+  }
   return (
     <ListingCardStyles>
       <div className="img-container">
@@ -25,17 +68,11 @@ const ProductListingCard = ({ title, img, details, id, price, rating }) => {
             </div>
             <div className="pricing-details">
               <p className="price-text">Rs {price.toLocaleString("en-IN")} /-</p>
-              {/* <p>Rating: {rating}</p> */}
               <Chip variant="outlined" color="success" label={rating} icon={<StarIcon />} />
             </div>
           </div>
         </NavLink>
-        <div className="btn-container">
-          <Button variant="filled" color="orange">
-            Add to cart
-          </Button>
-          <Button variant="filled">Add to wishlist</Button>
-        </div>
+        <div className="btn-container">{CTAButtons}</div>
       </div>
     </ListingCardStyles>
   );
@@ -48,6 +85,15 @@ ProductListingCard.propTypes = {
   img: PropTypes.string.isRequired,
   details: PropTypes.array,
   rating: PropTypes.number.isRequired,
+  handleCartUpdate: PropTypes.func,
+  handleWishlistUpdate: PropTypes.func,
+  addToCartBtnLoading: PropTypes.bool,
+  addToWishlistBtbLoading: PropTypes.bool,
+  page: PropTypes.string,
+};
+
+ProductListingCard.defaultProps = {
+  page: "product-listing",
 };
 
 export default ProductListingCard;
