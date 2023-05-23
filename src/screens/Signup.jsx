@@ -87,7 +87,6 @@ const Signup = () => {
     setIsLoading(true);
     createUserWithEmailAndPassword(firebaseAuth, inputValues.email, inputValues.password)
       .then(async (res) => {
-        console.log(res);
         await updateProfile(firebaseAuth.currentUser, { displayName: inputValues.name });
         toast(`Welcome ${inputValues.name}!`);
         let userDetails = {

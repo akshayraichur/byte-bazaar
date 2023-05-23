@@ -1,6 +1,5 @@
 import { StyledCard, StyledCategoryContents, StyledProductContents } from "./Card.styles";
 import PropTypes from "prop-types";
-import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
 
 const CardImageContainer = ({ img, title }) => (
@@ -19,19 +18,19 @@ const CategoryContents = ({ title, subtitle, children }) => {
   );
 };
 
-const ProductContents = ({ title, price, children, onBtnClick, hrefLink }) => {
+const ProductContents = ({ title, price, children, hrefLink }) => {
   return (
     <StyledProductContents>
       <NavLink to={hrefLink} className="navlink">
         {children}
         <h3 className="card-title">{title}</h3>
         <h4 className="card-price">₹{price}/-</h4>
-        <div className="btn-container">
-          <Button variant="filled" color="orange" onClick={onBtnClick}>
-            Add to Cart
-          </Button>
-        </div>
       </NavLink>
+      {/* <div className="btn-container">
+        <Button variant="filled" color="orange" onClick={onBtnClick}>
+          Add to Cart
+        </Button>
+      </div> */}
     </StyledProductContents>
   );
 };

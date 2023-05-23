@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import { Container, Grid } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../store/UserContext";
 import styled from "styled-components";
 import AuthError from "../Components/AuthError";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
-import { firebaseAuth, firebaseDB } from "../config/firebase";
+import { firebaseDB } from "../config/firebase";
 import { toast } from "react-toastify";
 import ProductListingCard from "../Components/ProductListingCard/ProductListingCard";
 
@@ -38,10 +39,9 @@ const CartDetails = () => {
       let filteredData = data.filter((p) => p.userId === user?.uid);
 
       setTotalCartPrice(filteredData.reduce((acc, curr) => (acc += curr.productQuantity * curr.productPricing), 0));
-      console.log(filteredData);
+
       setCartData(filteredData);
     } catch (error) {
-      console.log(error);
       toast.error(error.message);
     }
   };
@@ -49,7 +49,11 @@ const CartDetails = () => {
   const deleteProductFromCart = async (cartDetails) => {
     const cartDoc = doc(firebaseDB, "cart", cartDetails.id);
     // doc()
-    await deleteDoc(cartDoc);
+    try {
+      await deleteDoc(cartDoc);
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   useEffect(() => {
