@@ -96,7 +96,7 @@ const ProductListing = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [filters, setFitlers] = useState({ c: [], price: null, rating: 0 });
+  const [filters, setFitlers] = useState({ c: [], price: null, rating: 0, s: "" });
   const [expandAccordion, setExpandAccordion] = useState(true);
   const [addToCartBtnLoading, setAddToCartBtnLoading] = useState(false);
   const [addToWishlistBtnLoading, setAddToWishlistBtnLoading] = useState(false);
@@ -147,6 +147,14 @@ const ProductListing = () => {
         } else {
           setProducts(filteredProducts);
         }
+        if (searchParams.get("s")?.trim()) {
+          filteredProducts = filteredProducts.filter((p) =>
+            p.title.toLowerCase().includes(searchParams.get("s").trim().toLowerCase())
+          );
+          setProducts(filteredProducts);
+        } else {
+          setProducts(filteredProducts);
+        }
       } else {
         toast.error("There was some problem loading the products data.");
       }
@@ -177,12 +185,15 @@ const ProductListing = () => {
     if (searchParams.get("c")) {
       setFitlers((p) => ({ ...p, c: searchParams.get("c").split(",") ?? [] }));
     }
+    if (searchParams.get("s")) {
+      setFitlers((p) => ({ ...p, s: searchParams.get("s")?.trim() }));
+    }
     fetchCategories();
   }, []);
 
   useEffect(() => {
     fetchProducts();
-  }, [filters.c, filters.rating, filters.price]);
+  }, [filters.c, filters.rating, filters.price, filters.s, searchParams]);
 
   const updateFilter = (e, type) => {
     if (type === FILTER_NAMES.CATEGORY) {
@@ -208,7 +219,7 @@ const ProductListing = () => {
   };
 
   const clearFilters = () => {
-    setFitlers({ c: [], price: null, rating: 0 });
+    setFitlers({ c: [], price: null, rating: 0, s: "" });
     setSearchParams({});
   };
 

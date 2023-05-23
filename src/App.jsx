@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <RouteDetails />
+      <RouteDetails></RouteDetails>
       <ToastContainer theme="dark" autoClose={2500} />
     </>
   );

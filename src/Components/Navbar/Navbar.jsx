@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // local imports
 import ShoppingCartIcon from "../../assets/Icons/ShoppingCartIcon";
 import WishListIcon from "../../assets/Icons/WishListIcon";
@@ -18,11 +18,21 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     firebaseAuth.signOut();
     toast("Logged out!");
   };
+
+  const handleSearch = (event) => {
+    if (event.keyCode === 13) {
+      if (event.target.value.trim()) {
+        navigate(`/products?s=${event.target.value.trim()}`);
+      }
+    }
+  };
+
   return (
     <StyledNavbar>
       <Container maxWidth="xl" className="nav-container">
@@ -31,7 +41,12 @@ const Navbar = () => {
           <h1 className="nav-title">Bytes</h1>
         </NavLink>
         <div className="search-container">
-          <input type="text" placeholder="Search product by name..." className="search-input" />
+          <input
+            type="text"
+            placeholder="Search product by name..."
+            className="search-input"
+            onKeyDown={handleSearch}
+          />
         </div>
         <div className="icon-container">
           <NavLink to="/wishlist" className="icon" title="Whislist">
@@ -58,7 +73,12 @@ const Navbar = () => {
         </div>
 
         <div className="sm-search-container">
-          <input type="text" placeholder="Search product.." className="search-input sm" />
+          <input
+            type="text"
+            placeholder="Search product by name.."
+            className="search-input sm"
+            onKeyDown={handleSearch}
+          />
         </div>
       </Container>
     </StyledNavbar>

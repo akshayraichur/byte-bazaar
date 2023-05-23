@@ -89,4 +89,14 @@ export const ListingCardStyles = styled.div`
       }
     }
   }
+
+  .cart-quantity-container {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+  }
+
+  .cart-quantity-container span {
+    font-size: 1.2rem;
+  }
 `;
