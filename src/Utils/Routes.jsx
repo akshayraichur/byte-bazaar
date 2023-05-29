@@ -8,6 +8,7 @@ import Profile from "../screens/Profile";
 import ProductListing from "../screens/ProductListing";
 import Login from "../screens/Login";
 import Signup from "../screens/Signup";
+import Checkout from "../screens/Checkout";
 
 const RouteDetails = () => (
   <Routes>
@@ -15,6 +16,7 @@ const RouteDetails = () => (
     <Route path="/products" element={<ProductListing />}></Route>
     <Route path="/details/:id" element={<ProductDetails />}></Route>
     <Route path="/cart" element={<CartDetails />}></Route>
+    <Route path="/checkout" element={<Checkout />}></Route>
     <Route path="/wishlist" element={<Wishlist />}></Route>
     <Route path="/profile" element={<Profile />}></Route>
     <Route path="/login" element={<Login />}></Route>

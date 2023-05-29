@@ -151,7 +151,7 @@ const Home = () => {
           <br />
 
           <h1>{user.name ? `Top picks for you, ${user.name.split(" ")[0]} ✨` : "Top picks for you ✨"}</h1>
-          <Grid container spacing={1}>
+          <Grid container spacing={2}>
             {PRODUCTS.filter((products) => products.tag === "best-seller").map((product) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
                 <Card

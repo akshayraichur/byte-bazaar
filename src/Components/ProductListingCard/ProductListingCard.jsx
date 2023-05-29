@@ -11,7 +11,7 @@ const CardCTAButtons = ({
   addToCartBtnLoading,
   handleWishlistUpdate,
   addToWishlistBtbLoading,
-  handleRemoveItem,
+  removeProduct,
 }) => (
   <>
     {page === "product-listing" && (
@@ -30,7 +30,7 @@ const CardCTAButtons = ({
         <Button variant="filled" onClick={handleWishlistUpdate} isLoading={addToWishlistBtbLoading}>
           Add to wishlist
         </Button>
-        <Button color="orange" variant="outlined" onClick={handleRemoveItem}>
+        <Button color="orange" variant="outlined" onClick={removeProduct}>
           Remove
         </Button>
       </>
@@ -38,46 +38,69 @@ const CardCTAButtons = ({
 
     {page === "wishlist" && (
       <>
-        <Button variant="filled" color="orange" onClick={handleCartUpdate} isLoading={addToCartBtnLoading}>
+        <Button variant="filled" color="green" onClick={handleCartUpdate} isLoading={addToCartBtnLoading}>
           Add to cart
+        </Button>
+        <Button color="orange" variant="outlined" onClick={removeProduct}>
+          Remove
         </Button>
       </>
     )}
   </>
 );
 
-const CardContents = ({ id, page, title, details, quantity, price, rating }) => {
+const CardContents = ({
+  id,
+  page,
+  title,
+  details,
+  quantity,
+  price,
+  rating,
+  handleIncrementProduct,
+  handleDecrementProduct,
+}) => {
   return (
     <>
       {page === "cart" && (
-        <>
-          <div className="details-container">
-            <div className="details">
-              <NavLink to={`/details/${id}`} className="navlink w-100">
-                <h2>{title}</h2>
-              </NavLink>
-              <ul className="description">
-                {details?.map((detail) => (
-                  <li key={detail}>{detail}</li>
-                ))}
-              </ul>
+        <div className="details-container">
+          <div className="details">
+            <NavLink to={`/details/${id}`} className="navlink w-100">
+              <h2>{title}</h2>
+            </NavLink>
+            <ul className="description">
+              {details?.map((detail) => (
+                <li key={detail}>{detail}</li>
+              ))}
+            </ul>
 
-              <div className="cart-quantity-container">
-                <Button small={true} variant="outlined" color="orange" disabled={quantity === 1}>
-                  -
-                </Button>
-                <span>{quantity}</span>
-                <Button small={true} variant="outlined" color="green" disabled={quantity === 10}>
-                  +
-                </Button>
-              </div>
-            </div>
-            <div className="pricing-details">
-              <p className="price-text">Rs {price.toLocaleString("en-IN")} /-</p>
-              <Chip variant="outlined" color="success" label={rating} icon={<StarIcon />} />
+            <div className="cart-quantity-container">
+              <Button
+                small={true}
+                variant="outlined"
+                color="orange"
+                disabled={quantity === 1}
+                onClick={handleDecrementProduct}
+              >
+                -
+              </Button>
+              <span>{quantity}</span>
+              <Button
+                small={true}
+                variant="outlined"
+                color="green"
+                disabled={quantity === 10}
+                onClick={handleIncrementProduct}
+              >
+                +
+              </Button>
             </div>
           </div>
-        </>
+          <div className="pricing-details">
+            <p className="price-text">Rs {price.toLocaleString("en-IN")} /-</p>
+            <Chip variant="outlined" color="success" label={rating} icon={<StarIcon />} />
+          </div>
+        </div>
       )}
 
       {page === "product-listing" && (
@@ -100,6 +123,20 @@ const CardContents = ({ id, page, title, details, quantity, price, rating }) => 
           </NavLink>
         </>
       )}
+
+      {page === "wishlist" && (
+        <div className="details-container">
+          <div className="details">
+            <NavLink to={`/details/${id}`} className="navlink w-100">
+              <h2>{title}</h2>
+            </NavLink>
+          </div>
+          <div className="pricing-details">
+            <p className="price-text">Rs {price.toLocaleString("en-IN")} /-</p>
+            <Chip variant="outlined" color="success" label={rating} icon={<StarIcon />} />
+          </div>
+        </div>
+      )}
     </>
   );
 };
@@ -117,6 +154,9 @@ const ProductListingCard = ({
   addToWishlistBtbLoading,
   page,
   quantity,
+  removeProduct,
+  handleIncrementProduct,
+  handleDecrementProduct,
 }) => {
   return (
     <ListingCardStyles>
@@ -133,6 +173,8 @@ const ProductListingCard = ({
           price={price}
           rating={rating}
           id={id}
+          handleIncrementProduct={handleIncrementProduct}
+          handleDecrementProduct={handleDecrementProduct}
         />
         <div className="btn-container">
           <CardCTAButtons
@@ -141,6 +183,7 @@ const ProductListingCard = ({
             addToCartBtnLoading={addToCartBtnLoading}
             addToWishlistBtbLoading={addToWishlistBtbLoading}
             page={page}
+            removeProduct={removeProduct}
           />
         </div>
       </div>
@@ -152,7 +195,6 @@ CardContents.propTypes = {
   page: PropTypes.string,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  img: PropTypes.string.isRequired,
   details: PropTypes.array,
   rating: PropTypes.number.isRequired,
   handleCartUpdate: PropTypes.func,
@@ -162,6 +204,8 @@ CardContents.propTypes = {
   handleRemoveItem: PropTypes.func,
   quantity: PropTypes.number,
   id: PropTypes.string,
+  handleIncrementProduct: PropTypes.func,
+  handleDecrementProduct: PropTypes.func,
 };
 
 CardCTAButtons.propTypes = {
@@ -170,7 +214,7 @@ CardCTAButtons.propTypes = {
   addToCartBtnLoading: PropTypes.bool,
   handleWishlistUpdate: PropTypes.func,
   addToWishlistBtbLoading: PropTypes.bool,
-  handleRemoveItem: PropTypes.func,
+  removeProduct: PropTypes.func,
 };
 
 ProductListingCard.propTypes = {
@@ -187,6 +231,9 @@ ProductListingCard.propTypes = {
   page: PropTypes.string,
   handleRemoveItem: PropTypes.func,
   quantity: PropTypes.number,
+  removeProduct: PropTypes.func,
+  handleIncrementProduct: PropTypes.func,
+  handleDecrementProduct: PropTypes.func,
 };
 
 ProductListingCard.defaultProps = {

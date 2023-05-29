@@ -88,6 +88,30 @@ export const GlobalStyles = createGlobalStyle`
     color: inherit;
   }
 
+  .input-container {
+    width: 100%; 
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    font-family: "Inter";
+    border-radius: ${(props) => props.theme.borderRadius.card};
+    font-size: 1.1rem;
+    color: ${(props) => props.theme.colors.text};
+    border: 1px solid ${(props) => props.theme.colors.text};
+
+    
+    ::-webkit-input-placeholder {
+      color: ${(props) => props.theme.colors.text};
+    }
+
+    :focus {
+      outline: 1px solid ${(props) => props.theme.colors.text};
+    }
+
+    @media only screen and (width <= 599px) {
+      width: 100%;
+    }
+  }
+
   footer{
     margin: 2rem 0 0 0;
     background-color: ${(props) => props.theme.colors.text};

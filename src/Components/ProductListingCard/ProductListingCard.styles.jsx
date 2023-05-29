@@ -43,6 +43,7 @@ export const ListingCardStyles = styled.div`
 
     h2 {
       text-decoration: none;
+      font-family: "Lora", sans;
     }
 
     @media only screen and (width < 799px) {
