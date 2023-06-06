@@ -182,7 +182,7 @@ const CartDetails = () => {
 
                 <input className="input-container" type="text" placeholder="Add coupon" onKeyDown={handleAddCoupon} />
 
-                <NavLink to="/checkout">
+                <NavLink state={{ totalCartPrice }} to="/checkout">
                   <Button fullWidth={true} variant="filled" color="orange">
                     Checkout
                   </Button>

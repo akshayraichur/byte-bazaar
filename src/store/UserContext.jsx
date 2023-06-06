@@ -11,7 +11,7 @@ const UserDetails = ({ children }) => {
 
   useEffect(() => {
     firebaseAuth.onAuthStateChanged((res) => {
-      setUser({ name: res?.displayName, email: res?.email, token: res?.accessToken, uid: res.uid });
+      setUser({ name: res?.displayName, email: res?.email, token: res?.accessToken, uid: res?.uid });
       if (res?.accessToken) {
         setIsAuthenticated(true);
       } else {

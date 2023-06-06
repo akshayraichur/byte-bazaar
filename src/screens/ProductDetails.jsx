@@ -1,5 +1,5 @@
 import { Chip, Container, Grid, Rating } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getAPI } from "../Utils/ApiCalls";
 import { GET_PRODUCTS } from "../Constants/URLs";
@@ -8,6 +8,9 @@ import styled from "styled-components";
 import Shimmer from "../Components/Shimmer";
 import Footer from "../Components/Footer";
 import Button from "../Components/Button/Button";
+import { addDoc, collection, doc, getDocs, updateDoc } from "firebase/firestore";
+import { firebaseDB } from "../config/firebase";
+import { UserContext } from "../store/UserContext";
 
 const ProductDetailStyles = styled.div`
   padding: 1rem 0;
@@ -94,10 +97,12 @@ const ProductDetailStyles = styled.div`
 
 const ProductDetails = () => {
   const { id } = useParams();
-
+  const { isAuthenticated, user } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState({});
   const [noProductFound, setNoProductFound] = useState(false);
+  const [addToCartBtnLoading, setAddToCartBtnLoading] = useState(false);
+  const [addToWishlistBtnLoading, setAddToWishlistBtnLoading] = useState(false);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -120,6 +125,84 @@ const ProductDetails = () => {
       toast.error(error.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleCartUpdate = async (product) => {
+    if (!isAuthenticated) {
+      toast.info("Please login to add product to cart");
+      return;
+    }
+
+    setAddToCartBtnLoading(true);
+    const cartRef = collection(firebaseDB, "cart");
+
+    try {
+      const response = await getDocs(cartRef);
+      const data = response.docs.map((items) => ({ ...items.data(), id: items.id }));
+
+      let findDoc = data.find((p) => p.productId === product.id && user?.uid === p.userId);
+      if (!findDoc) {
+        // here, you have to add the doc to firebase
+        await addDoc(cartRef, {
+          productTitle: product.title,
+          productPricing: product.price,
+          productCategory: product.category,
+          productImg: product.img,
+          userId: user?.uid,
+          productRating: product.rating,
+          productQuantity: 1,
+          productId: product.id,
+          userName: user?.name,
+        });
+        toast.success("Product added to cart");
+      } else {
+        // here, you have to update the firebase doc.
+        const cartDoc = doc(firebaseDB, "cart", findDoc.id);
+        await updateDoc(cartDoc, { productQuantity: findDoc.productQuantity + 1 });
+        toast.success("Product added to cart");
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setAddToCartBtnLoading(false);
+    }
+  };
+
+  const handleWishlistUpdate = async (product) => {
+    if (!isAuthenticated) {
+      toast.info("Please login to add product to wishlist");
+      return;
+    }
+
+    setAddToWishlistBtnLoading(true);
+    const wishlistDBRef = collection(firebaseDB, "wishlist");
+
+    try {
+      const response = await getDocs(wishlistDBRef);
+      const data = response.docs.map((items) => ({ ...items.data(), id: items.id }));
+
+      let findProduct = data.find((p) => p.productId === product.id && user?.uid === p.userId);
+
+      if (!findProduct) {
+        await addDoc(wishlistDBRef, {
+          productTitle: product.title,
+          productPricing: product.price,
+          productCategory: product.category,
+          productImg: product.img,
+          userId: user?.uid,
+          productRating: product.rating,
+          productId: product.id,
+          userName: user?.name,
+        });
+        toast.success("Product added to Wishlist");
+      } else {
+        toast.error("You have already added this product to wishlist, go to wishlist page");
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setAddToWishlistBtnLoading(false);
     }
   };
 
@@ -183,8 +266,16 @@ const ProductDetails = () => {
                 </div>
 
                 <div className="btn-container">
-                  <Button color="orange">Add to cart</Button>
-                  <Button color="green">Add to wishlist</Button>
+                  <Button color="orange" isLoading={addToCartBtnLoading} onClick={() => handleCartUpdate(product)}>
+                    Add to cart
+                  </Button>
+                  <Button
+                    color="green"
+                    isLoading={addToWishlistBtnLoading}
+                    onClick={() => handleWishlistUpdate(product)}
+                  >
+                    Add to wishlist
+                  </Button>
                 </div>
               </div>
             </Grid>

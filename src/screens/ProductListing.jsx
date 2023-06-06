@@ -248,6 +248,7 @@ const ProductListing = () => {
           productRating: product.rating,
           productQuantity: 1,
           productId: product.id,
+          userName: user?.name,
         });
         toast.success("Product added to cart");
       } else {
@@ -289,6 +290,7 @@ const ProductListing = () => {
           userId: user?.uid,
           productRating: product.rating,
           productId: product.id,
+          userName: user?.name,
         });
         toast.success("Product added to Wishlist");
       } else {

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { UserContext } from "../store/UserContext";
 import AuthError from "../Components/AuthError";
 import ProductListingCard from "../Components/ProductListingCard/ProductListingCard";
-import { collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { firebaseDB } from "../config/firebase";
 import { toast } from "react-toastify";
 
@@ -24,6 +24,36 @@ const Wishlist = () => {
       let filteredData = data.filter((p) => p.userId === user?.uid);
 
       setWishlistData(filteredData);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  const handleAddToCart = async (product) => {
+    const cartRef = collection(firebaseDB, "cart");
+    try {
+      const response = await getDocs(cartRef);
+      const data = response.docs.map((items) => ({ ...items.data(), id: items.id }));
+      let findDoc = data.find((p) => p.productId === product.id && user?.uid === p.userId);
+      if (!findDoc) {
+        // here, you have to add the doc to firebase
+        await addDoc(cartRef, {
+          productTitle: product.title,
+          productPricing: product.price,
+          productCategory: product.category,
+          productImg: product.img,
+          userId: user?.uid,
+          productRating: product.rating,
+          productQuantity: 1,
+          productId: product.id,
+        });
+        toast.success("Product added to cart");
+      } else {
+        // here, you have to update the firebase doc.
+        const cartDoc = doc(firebaseDB, "cart", findDoc.id);
+        await updateDoc(cartDoc, { productQuantity: findDoc.productQuantity + 1 });
+        toast.success("Product added to cart");
+      }
     } catch (error) {
       toast.error(error.message);
     }
@@ -66,6 +96,7 @@ const Wishlist = () => {
                 rating={product.productRating}
                 page="wishlist"
                 quantity={product.productQuantity}
+                handleCartUpdate={() => handleAddToCart(product)}
                 // removeProduct={() => deleteProductFromCart(product)}
                 // handleIncrementProduct={() => handleIncrementProduct(product)}
                 // handleDecrementProduct={() => handleDecrementProduct(product)}

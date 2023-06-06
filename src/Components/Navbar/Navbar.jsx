@@ -23,6 +23,7 @@ const Navbar = () => {
   const handleLogout = () => {
     firebaseAuth.signOut();
     toast("Logged out!");
+    window.location.reload();
   };
 
   const handleSearch = (event) => {

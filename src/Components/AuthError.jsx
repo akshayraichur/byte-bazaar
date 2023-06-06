@@ -24,6 +24,7 @@ const AuthError = (props) => {
       {page === "cart" && <h2>Please login to you account to see your cart!</h2>}
 
       {page === "wishlist" && <h2>Please login to your see your wishlist! </h2>}
+      {page === "checkout" && <h2>Please login to checkout your products! </h2>}
       <br />
       <br />
       <NavLink to="/login" className="navlink">
