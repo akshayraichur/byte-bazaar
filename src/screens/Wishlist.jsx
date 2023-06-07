@@ -132,6 +132,18 @@ const Wishlist = () => {
     );
   }
 
+  if (!wishlistLoading && wishlistData.length === 0) {
+    return (
+      <Container maxWidth="md">
+        <WishlistStyles>
+          <center>
+            <h2>No product in Wishlist</h2>
+          </center>
+        </WishlistStyles>
+      </Container>
+    );
+  }
+
   return (
     <Container maxWidth="md">
       <WishlistStyles>

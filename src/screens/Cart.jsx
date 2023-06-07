@@ -163,6 +163,18 @@ const CartDetails = () => {
     );
   }
 
+  if (!cartDetailsLoading && cartData.length === 0) {
+    return (
+      <Container maxWidth="md">
+        <CartDetailStyles>
+          <center>
+            <h2>No product in Cart</h2>
+          </center>
+        </CartDetailStyles>
+      </Container>
+    );
+  }
+
   return (
     <>
       <Container maxWidth="xl">
