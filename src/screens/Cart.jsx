@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Skeleton } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../store/UserContext";
 import styled from "styled-components";
@@ -40,10 +40,12 @@ const CartDetails = () => {
   const [addressData, setAddressData] = useState([]);
   const [totalCartPrice, setTotalCartPrice] = useState(0);
   const [refreshPage, setRefreshPage] = useState(false);
+  const [cartDetailsLoading, setCartDetailsLoading] = useState(false);
 
   const cartCollectionRef = collection(firebaseDB, "cart");
 
   const fetchCartDetails = async () => {
+    setCartDetailsLoading(true);
     try {
       const response = await getDocs(cartCollectionRef);
       const data = response.docs.map((items) => ({ ...items.data(), id: items.id }));
@@ -54,6 +56,8 @@ const CartDetails = () => {
       setCartData(filteredData);
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setCartDetailsLoading(false);
     }
   };
 
@@ -132,6 +136,28 @@ const CartDetails = () => {
       <Container maxWidth="xl">
         <CartDetailStyles>
           <AuthError page="cart" />
+        </CartDetailStyles>
+      </Container>
+    );
+  }
+
+  if (cartDetailsLoading) {
+    return (
+      <Container maxWidth="xl">
+        <CartDetailStyles>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={7} md={9}>
+              <Skeleton height={100} />
+              <br />
+              <Skeleton height={100} />
+              <br />
+              <Skeleton height={100} />
+              <br />
+            </Grid>
+            <Grid item xs={12} sm={5} md={3}>
+              <Skeleton height={300} />
+            </Grid>
+          </Grid>
         </CartDetailStyles>
       </Container>
     );

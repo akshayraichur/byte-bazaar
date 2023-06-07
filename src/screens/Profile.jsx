@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../store/UserContext";
 import styled from "styled-components";
 import AuthError from "../Components/AuthError";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
 import { firebaseDB } from "../config/firebase";
 import { toast } from "react-toastify";
 import Button from "../Components/Button/Button";
@@ -98,6 +98,7 @@ const Profile = () => {
     state: "",
     userId: user?.uid,
   });
+  const [refreshPage, setRefreshPage] = useState(false);
 
   const fetchAddressDetails = async () => {
     try {
@@ -133,6 +134,16 @@ const Profile = () => {
       toast.error(error.message);
     } finally {
       setAddAddressBtn(false);
+      setRefreshPage((p) => !p);
+      setAddAddress({
+        address: "",
+        city: "",
+        houseNo: "",
+        name: "",
+        pincode: "",
+        state: "",
+        userId: user?.uid,
+      });
     }
   };
 
@@ -146,7 +157,47 @@ const Profile = () => {
 
   useEffect(() => {
     fetchAddressDetails();
-  }, []);
+  }, [refreshPage]);
+
+  const handleEditAddress = (address) => {
+    setEditModal(true);
+    setEditAddress({
+      address: address.address,
+      city: address.city,
+      houseNo: address.houseNo,
+      name: address.name,
+      pincode: address.pincode,
+      state: address.state,
+      userId: user?.uid,
+      id: address.id,
+    });
+  };
+
+  const updateAddress = async (e) => {
+    e.preventDefault();
+    try {
+      const addressDoc = doc(firebaseDB, "address", editAddress.id);
+      await updateDoc(addressDoc, editAddress);
+      // succcess
+      toast.success("Address Updated");
+      setEditModal(false);
+      setRefreshPage((p) => !p);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  const removeAddress = async (address) => {
+    toast.info(`Removing address`);
+    const addressRef = doc(firebaseDB, "address", address.id);
+    try {
+      await deleteDoc(addressRef);
+      toast.success("Address removed");
+      setRefreshPage((p) => !p);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   if (!isAuthenticated) {
     return (
@@ -183,10 +234,10 @@ const Profile = () => {
             <p>{address.state}</p>
             <p>{address.pincode}</p>
             <div>
-              <Button variant="filled" color="green" onClick={() => setEditModal(true)}>
+              <Button variant="filled" color="green" onClick={() => handleEditAddress(address)}>
                 Edit
               </Button>
-              <Button variant="outlined" color="orange">
+              <Button variant="outlined" color="orange" onClick={() => removeAddress(address)}>
                 Remove
               </Button>
             </div>
@@ -224,6 +275,7 @@ const Profile = () => {
                   addAddress={editAddress}
                   setAddAddress={setEditAddress}
                   addAddressBtn={addAddressBtn}
+                  uploadAddress={updateAddress}
                 />
               </Modal>
             </div>

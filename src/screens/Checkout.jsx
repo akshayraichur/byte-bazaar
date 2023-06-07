@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useNavigation } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../Components/Button/Button";
 import { useContext, useEffect, useState } from "react";
@@ -58,6 +58,7 @@ const Checkout = () => {
   });
   const [addAddressBtn, setAddAddressBtn] = useState(false);
   const [refreshState, setRefreshState] = useState(false);
+  const [selectedAddress, setSelectedAddress] = useState(null);
 
   const navigate = useNavigate();
 
@@ -110,7 +111,15 @@ const Checkout = () => {
   };
 
   const handlePlaceOrder = () => {
-    toast.success("Order Successfully placed");
+    // check if address is selected or not.
+    if (selectedAddress) {
+      toast.success("Order Successfully placed");
+      setTimeout(() => {
+        navigate("/");
+      }, 500);
+    } else {
+      toast.error("Please choose an address to deliver to");
+    }
   };
 
   if (!isAuthenticated) {
@@ -131,8 +140,15 @@ const Checkout = () => {
             <h1>Checkout</h1>
             <div>
               {addressData.map((item) => (
-                <div key={item.name} className="address-container">
-                  <input type="radio" id={item.name} name="address" />
+                <div key={item.name} className="address-container" onClick={() => setSelectedAddress(item.id)}>
+                  <input
+                    type="radio"
+                    id={item.id}
+                    name="address"
+                    value={item.id}
+                    checked={selectedAddress === item.id}
+                    onChange={(e) => setSelectedAddress(e.target.value)}
+                  />
                   <label htmlFor={item.name}>
                     <h2>{item.name}</h2>
                     <p># {item.houseNo}</p>
