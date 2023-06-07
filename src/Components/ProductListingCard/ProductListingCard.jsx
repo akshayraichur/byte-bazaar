@@ -41,7 +41,7 @@ const CardCTAButtons = ({
         <Button variant="filled" color="green" onClick={handleCartUpdate} isLoading={addToCartBtnLoading}>
           Add to cart
         </Button>
-        <Button color="orange" variant="outlined" onClick={removeProduct}>
+        <Button color="orange" variant="outlined" onClick={removeProduct} isLoading={addToWishlistBtbLoading}>
           Remove
         </Button>
       </>

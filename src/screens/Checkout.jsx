@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../Components/Button/Button";
 import { useContext, useEffect, useState } from "react";
